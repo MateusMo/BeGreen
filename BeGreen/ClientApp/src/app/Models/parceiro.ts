@@ -4,7 +4,7 @@ export class parceiro{
     cnpj?:string;
     ramo?:string;
     tipoDeCadastro?:number;
-    enderecos?:string
+    endereco?:string
 }
 
 
