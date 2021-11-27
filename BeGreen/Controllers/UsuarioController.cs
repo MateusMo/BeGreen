@@ -1,5 +1,9 @@
 ﻿using AutoMapper;
+using BeGreen.Application;
 using BeGreen.Context;
+using BeGreen.Dtos.Usuario;
+using BeGreen.Enums;
+using BeGreen.InterfaceRepositorio;
 using BeGreen.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,22 +19,61 @@ namespace BeGreen.Controllers
     [Route("[controller]")]
     public class UsuarioController : ControllerBase
     {
-        private readonly ContextBase _context;
-
+        private readonly UsuarioApplication _usuarioApplication;
+        private readonly LoginApplication _loginApplication;
         private readonly IMapper _mapper;
 
-        public UsuarioController(ContextBase contextBase, IMapper mapper)
+        public UsuarioController(IMapper mapper, 
+            UsuarioApplication usuarioApplication, 
+            LoginApplication loginApplication)
         {
-            _context = contextBase;
             _mapper = mapper;
+            _usuarioApplication = usuarioApplication;
+            _loginApplication = loginApplication;
         }
 
         [HttpGet]
-        public async Task<List<Usuario>> ObterUsuarios()
+        public List<Usuario> ObterUsuarios()
         {
-            List<Usuario> usuarios = await _context.Usuarios.ToListAsync();
+            List<Usuario> usuarios = _usuarioApplication.GetAll().ToList();
 
             return usuarios;
+        }
+
+        [HttpGet]
+        [Route("{id:int}")]
+        public ActionResult<Usuario> ObterUsuario([FromQuery]int id)
+        {
+            var usuario = _usuarioApplication.Get(id);
+
+            return Ok(usuario);
+        }
+
+        [HttpPost]
+        public IActionResult CadastrarUsuario([FromBody] CreateUsuarioDto usuarioDto)
+        {
+            var novoUsuario = _mapper.Map<Usuario>(usuarioDto);
+
+            var usuario = _usuarioApplication.ObterEmail(novoUsuario.Email);
+
+            if (usuario is not null)
+            {
+                var login = new Login();
+
+                login.Email = novoUsuario.Email;
+                login.Senha = novoUsuario.Senha;
+                login.TipoCadastro = novoUsuario.TipoCadastro;
+
+                _loginApplication.Add(login);
+
+                novoUsuario.CodigoLogin = login.Id;
+
+                _usuarioApplication.Add(novoUsuario);
+
+                return Ok("Usuário cadastrado com sucesso!");
+            }
+
+            return BadRequest("Usuário já cadastrado!");
         }
         
     }

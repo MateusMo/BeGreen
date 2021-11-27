@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace BeGreen.Repositorios
 {
-    public abstract class RepositorioGenerico<TEntity> : IInterfaceGenerica<TEntity>, IDisposable where TEntity : class
+    public abstract class RepositorioBase<TEntity> : IRepositorioGenerico<TEntity>, IDisposable where TEntity : class
     {
-        protected DbContext Context { get; }
+        protected ContextBase Context { get; }
 
-        public RepositorioGenerico(DbContext db)
+        public RepositorioBase(ContextBase db)
         {
             Context = db;
         }

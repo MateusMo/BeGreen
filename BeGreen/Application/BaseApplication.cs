@@ -15,9 +15,15 @@ namespace BeGreen.Application
         {
             _db = db;
         }
+
         public void Commit()
         {
             _db.SaveChanges();
+        }
+
+        public void CommitAsync()
+        {
+            _db.SaveChangesAsync();
         }
     }
 }

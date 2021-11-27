@@ -1,4 +1,7 @@
+using BeGreen.Application;
 using BeGreen.Context;
+using BeGreen.InterfaceRepositorio;
+using BeGreen.Repositorios;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,12 +36,22 @@ namespace BeGreen
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddDbContext<ContextBase>(options => options.UseSqlite(Configuration.GetConnectionString("SqlConnection")));
+            services.AddDbContext<ContextBase>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlConnection")));
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BeGreen", Version = "v1" });
             });
+
+            //Application
+            services.AddScoped<UsuarioApplication>();
+            services.AddScoped<ParceiroApplication>();
+            services.AddScoped<LoginApplication>();
+
+            //Interface e Repositorio
+            services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+            services.AddScoped<IParceiroRepositorio, ParceiroRepositorio>();
+            services.AddScoped<ILoginRepositorio, LoginRepositorio>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
