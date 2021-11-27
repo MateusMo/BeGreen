@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CadastroEntidadeService } from '../services/cadastro-entidade.service';
 import { parceiro } from '../Models/parceiro';
 import { usuario } from '../Models/usuario';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastro',
@@ -31,11 +30,7 @@ export class CadastroComponent implements OnInit {
   proximo() {
     this.isBusiness = (<HTMLInputElement>document.getElementById("inputState")).value;
     if(this.email == null || this.senha == null || this.isBusiness == null){
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Favor Preencher todos os campos',
-      })
+      alert('preencha todos os campos')
     } else {
       this.hideNext = true;
       //verifica se é usuário ou parceiro
