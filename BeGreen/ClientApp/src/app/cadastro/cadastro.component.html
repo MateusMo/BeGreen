@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-12 mt-5">
+            <img class="img-fluid" src="https://kanto.legiaodosherois.com.br/w760-h398-gnw-cfill-q80/wp-content/uploads/2021/09/legiao_QoKqVGLDCgUd.png.jpeg">
+        </div>
+        <div class="col-md-6 col-12 mt-5">
+            <form>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Nome</label>
+                    <input [(ngModel)]="usuario.nome" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputName" placeholder="Nome">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input [(ngModel)]="usuario.email" [ngModelOptions]="{standalone: true}" type="email" class="form-control" id="inputEmail" placeholder="Email">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">CPF</label>
+                    <input [(ngModel)]="usuario.cpf" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputCpf" placeholder="CPF">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputState">Genero</label>
+                    <select id="inputState" class="form-control">
+                      <option selected>Choose...</option>
+                      <option>Masculino</option>
+                      <option>Feminino</option>
+                      <option>Outro</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Data Nascimento</label>
+                    <input [(ngModel)]="usuario.dataNascimento" [ngModelOptions]="{standalone: true}" type="date" class="form-control" id="inputDate" placeholder="Data de Nascimento">
+                  </div>
+                </div>
+                <button  [routerLinkActive]="['link-active']" [routerLink]="['/']" type="submit" class="btn btn-success mr-1">Voltar</button>
+                <button type="submit" class="btn btn-primary" (click)="cadastrarUsuario()">Cadastrar</button>
+                
+              </form>
+        </div>
+    </div>
+</div>
