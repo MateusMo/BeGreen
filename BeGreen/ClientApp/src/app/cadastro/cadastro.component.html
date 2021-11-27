@@ -50,10 +50,10 @@
                   <!--Cadastro Parceiro-->
                   <div *ngIf="isBusiness == 1" class="form-group col-md-12">
                     <label for="inputEmail4">Cnpj</label>
-                    <input [(ngModel)]="usuario.cpf" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputCnpj" placeholder="Cnpj">
+                    <input [(ngModel)]="parceiro.cnpj" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputCnpj" placeholder="Cnpj">
                   </div>
                   <div *ngIf="isBusiness == 1" class="form-group col-md-12">
-                    <label for="inputState2">Genero</label>
+                    <label for="inputState2">Ramo</label>
                   <select id="inputState2" class="form-control">
                     <option selected>Ramo...</option>
                     <option>Indústria</option>
@@ -64,12 +64,12 @@
                   </div>
                   <div *ngIf="isBusiness == 1" class="form-group col-md-12">
                     <label for="inputEmail4">Endereço</label>
-                    <input [(ngModel)]="usuario.cpf" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputEndereço" placeholder="Endereço">
+                    <input [(ngModel)]="parceiro.endereco" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputEndereço" placeholder="Endereço">
                   </div>
                   <!--Cadastro Parceiro Fim-->
                 </div>
                 <button  [routerLinkActive]="['link-active']" [routerLink]="['/']" type="submit" class="btn btn-success mr-1">Voltar</button>
-                <button *ngIf="hideNext == false" type="submit" class="btn btn-primary" (click)="finalizarCadastro()">Próximo</button>
+                <button *ngIf="hideNext == false" type="submit" class="btn btn-primary" (click)="proximo()">Próximo</button>
                 <button *ngIf="isBusiness != null" type="submit" class="btn btn-primary" (click)="cadastrarUsuario()">Cadastrar</button>
                 
               </form>
