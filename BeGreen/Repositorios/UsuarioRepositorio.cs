@@ -1,5 +1,5 @@
 ﻿using BeGreen.Context;
-using BeGreen.Interfaces;
+using BeGreen.InterfaceRepositorio;
 using BeGreen.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,15 +9,21 @@ using System.Threading.Tasks;
 
 namespace BeGreen.Repositorios
 {
-    public class UsuarioRepositorio : RepositorioGenerico<Usuario>, IUsuario
+    public class UsuarioRepositorio : RepositorioBase<Usuario>, IUsuarioRepositorio
     {
         private readonly DbSet<Usuario> _usuario;
 
-        public UsuarioRepositorio(DbContext db) : base(db)
+        public UsuarioRepositorio(ContextBase db) : base(db)
         {
             _usuario = db.Set<Usuario>();
         }
 
+        public async Task<Usuario> ObterEmail(string email)
+        {
+            return await _usuario
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Email == email);
+        }
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using BeGreen.Models;
+﻿using BeGreen.Mappings;
+using BeGreen.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,20 @@ namespace BeGreen.Context
 
         public DbSet<Oferta> Ofertas { get; set; }
 
+        public DbSet<Login> Login { get; set; }
+
         public ContextBase(DbContextOptions<ContextBase> options) : base(options)
         {
             Database.EnsureCreated();
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new UsuarioMap());
+            modelBuilder.ApplyConfiguration(new ParceiroMap());
+            modelBuilder.ApplyConfiguration(new OfertaMap());
+            modelBuilder.ApplyConfiguration(new LoginMap());
+            modelBuilder.ApplyConfiguration(new EnderecoMap());
         }
 
     }

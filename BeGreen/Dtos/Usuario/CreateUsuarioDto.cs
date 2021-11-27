@@ -26,5 +26,8 @@ namespace BeGreen.Dtos.Usuario
 
         [Required(ErrorMessage = "O campo data de nascimento é obrigatório")]
         public DateTime DataNascimento { get; set; }
+
+        [Required(ErrorMessage = "O campo tipo de usuário é obrigatório")]
+        public ETipoCadastro TipoCadastro { get; set; }
     }
 }

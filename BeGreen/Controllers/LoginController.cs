@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using BeGreen.Application;
 using BeGreen.Context;
 using BeGreen.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -12,25 +14,27 @@ using System.Threading.Tasks;
 namespace BeGreen.Controllers
 {
     [ApiController]
+    [AllowAnonymous]
     [Route("[controller]")]
     public class LoginController : ControllerBase
     {
-        private readonly ContextBase _context;
+        private readonly LoginApplication _loginApplication;
 
         private readonly IMapper _mapper;
 
-        public LoginController(ContextBase contextBase, IMapper mapper)
+        public LoginController(IMapper mapper, LoginApplication loginApplication)
         {
-            _context = contextBase;
             _mapper = mapper;
+            _loginApplication = loginApplication;
         }
 
-        //[HttpPost]
-        //[Route("")]
-        //public async Task<IActionResult> Login(string email, string senha)
-        //{
-        //    var user = _context.Usuarios.
-        //}
+        [HttpPost]
+        [Route("")]
+        public async Task<IActionResult> Login(string email, string senha)
+        {
+            //var user = _loginApplication.
+            return Ok();
+        }
 
     }
 }

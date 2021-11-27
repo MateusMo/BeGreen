@@ -1,13 +1,14 @@
 ﻿using BeGreen.InterfacesGenericas;
 using BeGreen.Models;
+using BeGreen.Repositorios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BeGreen.Interfaces
+namespace BeGreen.InterfaceRepositorio
 {
-    public interface IUsuario : IInterfaceGenerica<Usuario>
+    public interface ILoginRepositorio : IRepositorioGenerico<Login>
     {
     }
 }

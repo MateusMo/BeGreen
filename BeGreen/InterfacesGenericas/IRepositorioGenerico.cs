@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BeGreen.InterfacesGenericas
 {
-    public interface IInterfaceGenerica<TEntity> where TEntity : class
+    public interface IRepositorioGenerico<TEntity> where TEntity : class
     {
         TEntity Get(string id);
 
