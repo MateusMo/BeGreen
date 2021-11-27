@@ -21,7 +21,7 @@
               id="inputCpf" placeholder="Sua senha">
           </div>
           <div *ngIf="hideNext == false" class="form-group col-md-12">
-            <label for="inputState">Tiop de Cadastro</label>
+            <label for="inputState">Tipo de Cadastro</label>
             <select id="inputState" class="form-control">
               <option selected>Escolha...</option>
               <option>Usuário</option>
@@ -34,20 +34,21 @@
           <div *ngIf="isBusiness == 0" class="form-group col-md-12">
             <label for="inputEmail4">Nome</label>
             <input [(ngModel)]="usuario.nome" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
-              id="inputNome" placeholder="Cpf">
+              id="inputNome" placeholder="Seu nome">
           </div>
           <div *ngIf="isBusiness == 0" class="form-group col-md-12">
             <label for="inputEmail4">CPF</label>
             <input [(ngModel)]="usuario.cpf" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
-              id="inputCpf" placeholder="Cpf">
+              id="inputCpf" placeholder="Seu CPF">
           </div>
           <div *ngIf="isBusiness == 0" class="form-group col-md-12">
-            <label for="inputState1">Genero</label>
+            <label for="inputState1">Gênero</label>
             <select id="inputState1" class="form-control">
               <option selected>Escolha...</option>
               <option>Masculino</option>
               <option>Feminino</option>
               <option>Outro</option>
+              <option>Não quero declarar</option>
             </select>
           </div>
           <div *ngIf="isBusiness == 0" class="form-group col-md-12">
@@ -58,14 +59,14 @@
           <!--Cadastro Usuario-->
           <!--Cadastro Parceiro-->
           <div *ngIf="isBusiness == 1" class="form-group col-md-12">
-            <label for="inputEmail4">Cnpj</label>
+            <label for="inputEmail4">CNPJ</label>
             <input [(ngModel)]="parceiro.cnpj" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
-              id="inputCnpj" placeholder="Cnpj">
+              id="inputCnpj" placeholder="CNPJ da Empresa">
           </div>
           <div *ngIf="isBusiness == 1" class="form-group col-md-12">
             <label for="inputState2">Ramo</label>
             <select id="inputState2" class="form-control">
-              <option selected>Ramo...</option>
+              <option selected>Àrea de atuação</option>
               <option>Indústria</option>
               <option>Comercio</option>
               <option>Serviços</option>
@@ -84,10 +85,10 @@
             class="btn btn-secondary mr-1">Voltar</button>
           <button *ngIf="hideNext == false" type="submit" class="btn btn-primary"
             (click)="proximo()">Continuar</button>
-          <button *ngIf="isBusiness != null" type="submit" class="btn btn-primary btn-block"
+          <button *ngIf="isBusiness != null" type="submit" class="btn btn-primary"
             (click)="cadastrarUsuario()">Cadastrar</button>
           <div class="center">
-            <a class="linkHover" [routerLinkActive]="['link-active']" [routerLink]="['/cadastro']">Já possui login?
+            <a class="linkHover" [routerLinkActive]="['link-active']" [routerLink]="['/']">Já possui login?
               Logar</a>
           </div>
         </div>
