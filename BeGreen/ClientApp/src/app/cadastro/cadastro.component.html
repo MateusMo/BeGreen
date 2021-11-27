@@ -24,13 +24,18 @@
                     </select>
                   </div>
                   <!--Fim Primeira verificação de cadastro-->
+                  <!--Cadastro Usuario-->
+                  <div *ngIf="isBusiness == 0" class="form-group col-md-12">
+                    <label for="inputEmail4">Nome</label>
+                    <input [(ngModel)]="usuario.nome" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputNome" placeholder="Nome">
+                  </div>
                   <div *ngIf="isBusiness == 0" class="form-group col-md-12">
                     <label for="inputEmail4">CPF</label>
                     <input [(ngModel)]="usuario.cpf" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputCpf" placeholder="Cpf">
                   </div>
                   <div *ngIf="isBusiness == 0" class="form-group col-md-12">
-                    <label for="inputState">Genero</label>
-                    <select id="inputStateGenero" class="form-control">
+                    <label for="inputState1">Genero</label>
+                    <select id="inputState1" class="form-control">
                       <option selected>Escolha...</option>
                       <option>Masculino</option>
                       <option>Feminino</option>
@@ -39,7 +44,7 @@
                   </div>
                   <div *ngIf="isBusiness == 0" class="form-group col-md-12">
                     <label for="inputDataDeNascimento">Data de nascimento</label>
-                    <input [(ngModel)]="usuario.cpf" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputDataDeNascimento" placeholder="Data de Nascimento">
+                    <input [(ngModel)]="usuario.dataDeNascimento" [ngModelOptions]="{standalone: true}" type="date" class="form-control" id="inputDataDeNascimento" placeholder="Data de Nascimento">
                   </div>
                   <!--Cadastro Usuario-->
                   <!--Cadastro Parceiro-->
@@ -48,8 +53,8 @@
                     <input [(ngModel)]="usuario.cpf" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputCnpj" placeholder="Cnpj">
                   </div>
                   <div *ngIf="isBusiness == 1" class="form-group col-md-12">
-                    <label for="inputState">Genero</label>
-                  <select id="inputState" class="form-control">
+                    <label for="inputState2">Genero</label>
+                  <select id="inputState2" class="form-control">
                     <option selected>Ramo...</option>
                     <option>Indústria</option>
                     <option>Comercio</option>

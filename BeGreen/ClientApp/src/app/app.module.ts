@@ -12,7 +12,6 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { LoginComponent } from './login/login.component';
 import { HomeUsuarioComponent } from './home-usuario/home-usuario.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
-
 @NgModule({
   declarations: [
     AppComponent,

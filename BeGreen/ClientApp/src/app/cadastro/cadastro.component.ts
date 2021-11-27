@@ -14,6 +14,7 @@ export class CadastroComponent implements OnInit {
   parceiro:parceiro = new parceiro();
   email:string;
   senha:string;
+  genero:any;
 
   //lógica de ngIf
   isBusiness:any = null;
@@ -25,22 +26,32 @@ export class CadastroComponent implements OnInit {
   }
 
   finalizarCadastro(){
-    debugger;
     this.hideNext = true;
     //verifica se é usuário ou parceiro
     this.isBusiness = (<HTMLInputElement>document.getElementById("inputState")).value;
-    // //verifica gênero do usuário
-    // let genero = (<HTMLInputElement>document.getElementById("inputStateGenero")).value;
-    // if(genero == 'Masculino'){
-    //   this.usuario.genero = 0;
-    // } else if(genero == 'Feminino') {
-    //   this.usuario.genero = 1;
-    // }else if(genero == 'Outro'){
-    //   this.usuario.genero = 2
-    // }
-     
     this.isBusiness == 'Usuário' ? this.isBusiness = 0 : this.isBusiness = 1;
     this.hideNext = true;
+  }
+
+  cadastrarUsuario(){
+    debugger;
+    if(this.isBusiness == 0){
+      this.usuario.email = this.email;
+      this.usuario.senha = this.senha;
+      this.usuario.tipoCadastro = 0;
+      //verifica gênero do usuário
+     this.genero = (<HTMLInputElement>document.getElementById("inputState1")).value;
+     if(this.genero == 'Masculino'){
+       this.usuario.genero = 0;
+     } else if(this.genero == 'Feminino') {
+       this.usuario.genero = 1;
+     }else if(this.genero == 'Outro'){
+       this.usuario.genero = 2
+     }
+     console.log(this.usuario)
+    } else {
+      this.parceiro.ramo = (<HTMLInputElement>document.getElementById("inputState2")).value;
+    }
   }
 
 }
