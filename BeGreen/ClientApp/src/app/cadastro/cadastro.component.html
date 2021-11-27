@@ -1,73 +1,94 @@
-<div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-md-6 col-12 mt-5">
-            <img class="img-fluid" src="https://kanto.legiaodosherois.com.br/w760-h398-gnw-cfill-q80/wp-content/uploads/2021/09/legiao_QoKqVGLDCgUd.png.jpeg">
-        </div>
-        <div class="col-md-6 col-12 mt-5">
-            <form>
-                <div class="form-row">
-                  <!--Primeira verificação de cadastro-->
-                  <div *ngIf="hideNext == false" class="form-group col-md-12">
-                    <label for="inputEmail4">Email</label>
-                    <input [(ngModel)]="email" [ngModelOptions]="{standalone: true}" type="email" class="form-control" id="inputEmail" placeholder="Seu email">
-                  </div>
-                  <div *ngIf="hideNext == false" class="form-group col-md-12">
-                    <label for="inputEmail4">Senha</label>
-                    <input [(ngModel)]="senha" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputCpf" placeholder="Senha">
-                  </div>
-                  <div *ngIf="hideNext == false" class="form-group col-md-12">
-                    <label for="inputState">Tiop de Cadastro</label>
-                    <select id="inputState" class="form-control">
-                      <option selected>Escolha...</option>
-                      <option>Usuário</option>
-                      <option>Parceiro</option>
-                    </select>
-                  </div>
-                  <!--Fim Primeira verificação de cadastro-->
-                  <div *ngIf="isBusiness == 0" class="form-group col-md-12">
-                    <label for="inputEmail4">CPF</label>
-                    <input [(ngModel)]="usuario.cpf" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputCpf" placeholder="Cpf">
-                  </div>
-                  <div *ngIf="isBusiness == 0" class="form-group col-md-12">
-                    <label for="inputState">Genero</label>
-                    <select id="inputStateGenero" class="form-control">
-                      <option selected>Escolha...</option>
-                      <option>Masculino</option>
-                      <option>Feminino</option>
-                      <option>Outro</option>
-                    </select>
-                  </div>
-                  <div *ngIf="isBusiness == 0" class="form-group col-md-12">
-                    <label for="inputDataDeNascimento">Data de nascimento</label>
-                    <input [(ngModel)]="usuario.cpf" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputDataDeNascimento" placeholder="Data de Nascimento">
-                  </div>
-                  <!--Cadastro Usuario-->
-                  <!--Cadastro Parceiro-->
-                  <div *ngIf="isBusiness == 1" class="form-group col-md-12">
-                    <label for="inputEmail4">Cnpj</label>
-                    <input [(ngModel)]="usuario.cpf" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputCnpj" placeholder="Cnpj">
-                  </div>
-                  <div *ngIf="isBusiness == 1" class="form-group col-md-12">
-                    <label for="inputState">Genero</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Ramo...</option>
-                    <option>Indústria</option>
-                    <option>Comercio</option>
-                    <option>Serviços</option>
-                    <option>Outro</option>
-                  </select>
-                  </div>
-                  <div *ngIf="isBusiness == 1" class="form-group col-md-12">
-                    <label for="inputEmail4">Endereço</label>
-                    <input [(ngModel)]="usuario.cpf" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputEndereço" placeholder="Endereço">
-                  </div>
-                  <!--Cadastro Parceiro Fim-->
-                </div>
-                <button  [routerLinkActive]="['link-active']" [routerLink]="['/']" type="submit" class="btn btn-success mr-1">Voltar</button>
-                <button *ngIf="hideNext == false" type="submit" class="btn btn-primary" (click)="finalizarCadastro()">Próximo</button>
-                <button *ngIf="isBusiness != null" type="submit" class="btn btn-primary" (click)="cadastrarUsuario()">Cadastrar</button>
-                
-              </form>
-        </div>
+<div class="container-fluid bd-white bg-card">
+  <div class="row justify-content-center">
+    <div>
+      <img class="img-fluid" src="../../assets/img/logo.jpg">
     </div>
+    <div class="col-md-6 col-12 mt-5">
+      <div>
+        <h1 class="title">Cadastro</h1>
+      </div>
+      <form>
+        <div class="form-row">
+          <!--Primeira verificação de cadastro-->
+          <div *ngIf="hideNext == false" class="form-group col-md-12">
+            <label for="inputEmail4">E-mail</label>
+            <input [(ngModel)]="email" [ngModelOptions]="{standalone: true}" type="email" class="form-control"
+              id="inputEmail" placeholder="Seu email">
+          </div>
+          <div *ngIf="hideNext == false" class="form-group col-md-12">
+            <label for="inputEmail4">Senha</label>
+            <input [(ngModel)]="senha" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+              id="inputCpf" placeholder="Sua senha">
+          </div>
+          <div *ngIf="hideNext == false" class="form-group col-md-12">
+            <label for="inputState">Tiop de Cadastro</label>
+            <select id="inputState" class="form-control">
+              <option selected>Escolha...</option>
+              <option>Usuário</option>
+              <option>Parceiro</option>
+            </select>
+          </div>
+
+          <!--Fim Primeira verificação de cadastro-->
+
+
+          <div *ngIf="isBusiness == 0" class="form-group col-md-12">
+            <label for="inputEmail4">CPF</label>
+            <input [(ngModel)]="usuario.cpf" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+              id="inputCpf" placeholder="Cpf">
+          </div>
+          <div *ngIf="isBusiness == 0" class="form-group col-md-12">
+            <label for="inputState">Genero</label>
+            <select id="inputStateGenero" class="form-control">
+              <option selected>Escolha...</option>
+              <option>Masculino</option>
+              <option>Feminino</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div *ngIf="isBusiness == 0" class="form-group col-md-12">
+            <label for="inputDataDeNascimento">Data de nascimento</label>
+            <input [(ngModel)]="usuario.cpf" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+              id="inputDataDeNascimento" placeholder="Data de Nascimento">
+          </div>
+          <!--Cadastro Usuario-->
+          <!--Cadastro Parceiro-->
+          <div *ngIf="isBusiness == 1" class="form-group col-md-12">
+            <label for="inputEmail4">Cnpj</label>
+            <input [(ngModel)]="usuario.cpf" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+              id="inputCnpj" placeholder="Cnpj">
+          </div>
+          <div *ngIf="isBusiness == 1" class="form-group col-md-12">
+            <label for="inputState">Genero</label>
+            <select id="inputState" class="form-control">
+              <option selected>Ramo...</option>
+              <option>Indústria</option>
+              <option>Comercio</option>
+              <option>Serviços</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div *ngIf="isBusiness == 1" class="form-group col-md-12">
+            <label for="inputEmail4">Endereço</label>
+            <input [(ngModel)]="usuario.cpf" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+              id="inputEndereço" placeholder="Endereço">
+          </div>
+          <!--Cadastro Parceiro Fim-->
+        </div>
+        <div class="center">
+          <button [routerLinkActive]="['link-active']" [routerLink]="['/']" type="submit"
+            class="btn btn-secondary mr-1">Voltar</button>
+          <button *ngIf="hideNext == false" type="submit" class="btn btn-primary"
+            (click)="finalizarCadastro()">Continuar</button>
+          <button *ngIf="isBusiness != null" type="submit" class="btn btn-primary btn-block"
+            (click)="cadastrarUsuario()">Cadastrar</button>
+          <div class="center">
+            <a class="linkHover" [routerLinkActive]="['link-active']" [routerLink]="['/cadastro']">Já possui login?
+              Logar</a>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
 </div>
