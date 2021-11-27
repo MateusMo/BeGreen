@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CadastroEntidadeService } from '../services/cadastro-entidade.service';
 import { parceiro } from '../Models/parceiro';
 import { usuario } from '../Models/usuario';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastro',
@@ -28,16 +29,23 @@ export class CadastroComponent implements OnInit {
   }
   //Função chamada na primeira parte do cadastro
   proximo() {
-    this.hideNext = true;
-    //verifica se é usuário ou parceiro
     this.isBusiness = (<HTMLInputElement>document.getElementById("inputState")).value;
-    this.isBusiness == 'Usuário' ? this.isBusiness = 0 : this.isBusiness = 1;
-    this.hideNext = true;
+    if(this.email == null || this.senha == null || this.isBusiness == null){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Favor Preencher todos os campos',
+      })
+    } else {
+      this.hideNext = true;
+      //verifica se é usuário ou parceiro
+      this.isBusiness == 'Usuário' ? this.isBusiness = 0 : this.isBusiness = 1;
+      this.hideNext = true;
+    }
   }
   //Função chamada para finalizar o cadastro
   //Definição se é usuário ou parceiro
   cadastrarUsuario() {
-    debugger;
     //verifica se é usuário
     if (this.isBusiness == 0) {
       this.usuario.email = this.email;
@@ -52,6 +60,7 @@ export class CadastroComponent implements OnInit {
       } else if (this.genero == 'Outro') {
         this.usuario.genero = 2
       }
+      console.log(this.usuario)
       //chamada api
       this._cadastroEntidade.cadastroUsuario(this.usuario).subscribe(response => {
 
@@ -66,6 +75,7 @@ export class CadastroComponent implements OnInit {
       this.parceiro.tipoDeCadastro = 1;
       this.parceiro.ramo = (<HTMLInputElement>document.getElementById("inputState2")).value;
       //chamada api
+      console.log(this.parceiro)
       this._cadastroEntidade.cadastroParceiro(this.parceiro).subscribe(response => {
 
       },error => {
