@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-4 col-12 mt-5">
+        <img class="img-fluid" src="https://s2.glbimg.com/PvTayRJKTqadH4L7wzeXvZvBkjs=/620x413/smart/e.glbimg.com/og/ed/f/original/2021/04/02/nicolas-cage-gq.jfif">
+      </div>
+      <div class="col-md-6 mt-5 col-12">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+            <div >
+                <button [routerLinkActive]="['link-active']"  [routerLink]="['/home-usuario']" type="submit" class="btn btn-primary">Login</button>
+              </div>
+              <div >
+                <a [routerLinkActive]="['link-active']"  [routerLink]="['/cadastro']">Não tem conta ainda? Cadastre-se</a>
+              </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
