@@ -11,9 +11,14 @@ namespace BeGreen.Context
     {
         public DbSet<Usuario> Usuarios { get; set; }
 
+        public DbSet<Parceiro> Parceiro { get; set; }
+
+        public DbSet<Oferta> Ofertas { get; set; }
+
         public ContextBase(DbContextOptions<ContextBase> options) : base(options)
         {
             Database.EnsureCreated();
         }
+
     }
 }

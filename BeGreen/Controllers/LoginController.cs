@@ -25,7 +25,12 @@ namespace BeGreen.Controllers
             _mapper = mapper;
         }
 
-        
-        
+        //[HttpPost]
+        //[Route("")]
+        //public async Task<IActionResult> Login(string email, string senha)
+        //{
+        //    var user = _context.Usuarios.
+        //}
+
     }
 }

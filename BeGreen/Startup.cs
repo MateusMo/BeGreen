@@ -31,9 +31,9 @@ namespace BeGreen
                 configuration.RootPath = "ClientApp/dist";
             });
 
-            services.AddDbContext<ContextBase>(options => options.UseSqlite(Configuration.GetConnectionString("SqlConnection")));
-
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            services.AddDbContext<ContextBase>(options => options.UseSqlite(Configuration.GetConnectionString("SqlConnection")));
 
             services.AddSwaggerGen(c =>
             {

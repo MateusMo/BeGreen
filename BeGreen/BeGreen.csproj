@@ -31,13 +31,13 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="Profiles\UsuarioProfile\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="Profiles\UsuarioProfile\**" />
+    <EmbeddedResource Remove="Profiles\UsuarioProfile\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="Profiles\UsuarioProfile\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Profiles\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

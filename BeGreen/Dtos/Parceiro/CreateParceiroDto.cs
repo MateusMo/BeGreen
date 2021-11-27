@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BeGreen.Dtos.Parceiro
+namespace BeGreen.Dtos.ParceiroDto
 {
     public class CreateParceiroDto
     {
