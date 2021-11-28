@@ -21,7 +21,6 @@ export class CadastroEntidadeService {
     return this.http.post(this.usuarioUrl, body,{'headers':headers})
   }
   cadastroParceiro(parceiro:parceiro): Observable<any> {
-    debugger;
     const headers = { 'content-type': 'application/json'}  
     const body = parceiro;
     return this.http.post(this.parceiroUrl, body,{'headers':headers})
