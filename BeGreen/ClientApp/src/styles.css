@@ -148,3 +148,9 @@ textarea:focus, input:focus, select:focus {
   width: 100%;
   padding-bottom: 70px;
 }
+
+#blog{
+  height: 1300px;
+  width: 900px;
+  padding-bottom: 70px;
+}
