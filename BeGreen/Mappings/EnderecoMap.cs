@@ -24,7 +24,7 @@ namespace BeGreen.Mappings
 
             //propriedades
             builder.Property(x => x.Cep);
-            builder.Property(x => x.Lagradouro);
+            builder.Property(x => x.Logradouro);
             builder.Property(x => x.Numero);
             builder.Property(x => x.Complemento);
 

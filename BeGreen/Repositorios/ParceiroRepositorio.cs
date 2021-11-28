@@ -18,11 +18,12 @@ namespace BeGreen.Repositorios
             _parceiro = db.Set<Parceiro>();
         }
 
-        public async Task<List<Parceiro>> ListarParceiros()
+        public Parceiro ObterEmail(string email)
         {
-            return await _parceiro
+            return _parceiro
+                .Include(x => x.Login)
                 .AsNoTracking()
-                .ToListAsync();
+                .FirstOrDefault(x => x.Email == email);
         }
 
     }

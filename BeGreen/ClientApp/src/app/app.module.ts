@@ -12,6 +12,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { LoginComponent } from './login/login.component';
 import { HomeUsuarioComponent } from './home-usuario/home-usuario.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { RedefinirSenhaComponent } from './redefinir-senha/redefinir-senha.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     LoginComponent,
     HomeUsuarioComponent,
     CadastroComponent,
+    RedefinirSenhaComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -32,7 +34,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'home-usuario', component: HomeUsuarioComponent },
-      { path: 'cadastro', component: CadastroComponent }
+      { path: 'cadastro', component: CadastroComponent },
+      { path: 'redefinirSenha', component: RedefinirSenhaComponent }
     ])
   ],
   providers: [],

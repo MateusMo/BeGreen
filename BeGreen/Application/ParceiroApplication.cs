@@ -17,6 +17,11 @@ namespace BeGreen.Application
             _parceiroRepositorio = parceiroRepositorio;
         }
 
+        public Parceiro ObterEmail(string email)
+        {
+            return _parceiroRepositorio.ObterEmail(email);
+        }
+
         public IEnumerable<Parceiro> GetAll()
         {
             return _parceiroRepositorio.Get();

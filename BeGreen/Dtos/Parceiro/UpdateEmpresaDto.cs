@@ -1,4 +1,5 @@
-﻿using BeGreen.Enums;
+﻿using BeGreen.Dtos.EnderecoDto;
+using BeGreen.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -23,5 +24,7 @@ namespace BeGreen.Dtos.ParceiroDto
 
         [Required(ErrorMessage = "O campo ramo é obrigatório")]
         public string Ramo { get; set; }
+
+        public UpdateEnderecoDto EnderecoDto { get; set; }
     }
 }

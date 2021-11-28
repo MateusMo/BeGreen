@@ -1,10 +1,19 @@
 export class parceiro{
+    
+    nome?:string;
+
     email?:string;
+
     senha?:string;
+
     cnpj?:string;
+
     ramo?:string;
+
     tipoDeCadastro?:number;
+
     endereco?:string
+    //endereco
 }
 
 
