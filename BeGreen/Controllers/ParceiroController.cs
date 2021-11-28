@@ -49,7 +49,7 @@ namespace BeGreen.Controllers
         }
 
         [HttpPost]
-        public IActionResult CadastrarParceiro([FromBody] CreateParceiroDto parceiroDto)
+        public IActionResult CadastrarParceiro([FromBody] CreateOfertaDto parceiroDto)
         {
             var atualizarParceiro = _mapper.Map<Parceiro>(parceiroDto);
 
@@ -76,7 +76,7 @@ namespace BeGreen.Controllers
         }
 
         [HttpPut]
-        public IActionResult AtualizarParceiro([FromBody] UpdateParceiroDto parceiroDto)
+        public IActionResult AtualizarParceiro([FromBody] UpdateOfertaDto parceiroDto)
         {
             var atualizarParceiro = _mapper.Map<Parceiro>(parceiroDto);
 
@@ -94,12 +94,10 @@ namespace BeGreen.Controllers
                 parceiro.Ramo = atualizarParceiro.Ramo;
                 parceiro.Nome = atualizarParceiro.Nome;
 
-                var endereco = parceiro.Enderecos.FirstOrDefault(x => x.Cep == parceiroDto.EnderecoDto.Cep);
-
-                endereco.Cep = parceiroDto.EnderecoDto.Cep;
-                endereco.Complemento = parceiroDto.EnderecoDto.Complemento;
-                endereco.Numero = parceiroDto.EnderecoDto.Numero;
-                endereco.Logradouro = parceiroDto.EnderecoDto.Logradouro;
+                parceiro.Cep = parceiroDto.Cep;
+                parceiro.Complemento = parceiroDto.Complemento;
+                parceiro.Numero = parceiroDto.Numero;
+                parceiro.Logradouro = parceiroDto.Logradouro;
 
                 _parceiroApplication.Update(parceiro);
 

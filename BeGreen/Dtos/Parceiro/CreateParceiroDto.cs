@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BeGreen.Dtos.ParceiroDto
 {
-    public class CreateParceiroDto
+    public class CreateOfertaDto
     {
         [Required(ErrorMessage = "O campo nome é obrigatório")]
         public string Nome { get; set; }
@@ -28,6 +28,15 @@ namespace BeGreen.Dtos.ParceiroDto
         [Required(ErrorMessage = "O campo tipo de usuário é obrigatório")]
         public ETipoCadastro TipoCadastro { get; set; }
 
-        public CreateParceiroDto EnderecoDto { get; set; }
+        [Required(ErrorMessage = "O campo CEP é obrigatório")]
+        public string Cep { get; set; }
+
+        [Required(ErrorMessage = "O campo Logradouro é obrigatório")]
+        public string Logradouro { get; set; }
+
+        [Required(ErrorMessage = "O campo número é obrigatório")]
+        public int Numero { get; set; }
+
+        public string Complemento { get; set; }
     }
 }

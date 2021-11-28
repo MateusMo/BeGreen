@@ -29,6 +29,10 @@ namespace BeGreen.Mappings
             builder.Property(x => x.Ramo);
             builder.Property(x => x.Cnpj);
             builder.Property(x => x.Senha);
+            builder.Property(x => x.Cep);
+            builder.Property(x => x.Logradouro);
+            builder.Property(x => x.Numero);
+            builder.Property(x => x.Complemento);
 
             //Indices
             builder.HasIndex(x => x.Id, "IX_Id_Parceiro")

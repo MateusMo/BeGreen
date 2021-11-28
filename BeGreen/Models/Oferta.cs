@@ -4,6 +4,11 @@ namespace BeGreen.Models
 {
     public class Oferta
     {
+        public Oferta()
+        {
+            DataInicio = DateTime.Now;
+        }
+
         public int Id { get; set; }
 
         public string Titulo { get; set; }
