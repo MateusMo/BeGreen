@@ -1,9 +1,10 @@
-<header>
+<header class="">
   <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+    class="navbar navbar-expand-sm navbar-toggleable-sm  bg-white border-bottom box-shadow mb-3"
   >
     <div class="container-fluid">
-      <a class="navbar-brand" [routerLink]="['/']">BeGreen</a>
+      <img class="begreen" src="../../assets/img/begreen.jpg"  [routerLink]="['/']">
+      
       <button
         class="navbar-toggler"
         type="button"
@@ -16,7 +17,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div
-        class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+        class="navbar collapse navbar-collapse d-sm-inline-flex justify-content-end"
         [ngClass]="{ show: isExpanded }"
       >
         <ul class="navbar-nav flex-grow">
@@ -25,16 +26,21 @@
             [routerLinkActive]="['link-active']"
             [routerLinkActiveOptions]="{ exact: true }"
           >
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+            <a class="nav-link" [routerLink]="['/']">Carteira</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/counter']"
-              >Counter</a
+            <a class="nav-link" [routerLink]="['/counter']"
+              >Carbono</a
             >
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/fetch-data']"
-              >Fetch data</a
+            <a class="nav-link" [routerLink]="['/fetch-data']"
+              >Perfil</a
+            >
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link " [routerLink]="['/fetch-data']"
+              >Blog</a
             >
           </li>
         </ul>

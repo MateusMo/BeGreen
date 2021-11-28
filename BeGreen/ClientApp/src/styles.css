@@ -2,6 +2,9 @@
 
 /* Provide sufficient contrast against white background */
 a {
+  color: #0F3C25;
+}
+a:hover{
   color: #66903C;
 }
 
@@ -71,3 +74,19 @@ textarea:focus, input:focus, select:focus {
   border: 0 none;
   outline: 0;
 } 
+
+.size{
+  width: 700px;
+}
+
+.nav{
+  color: #66903C;
+}
+
+.color{
+  color: #66903C;
+}
+
+.begreen{
+  width: 60px;
+}
