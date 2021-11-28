@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BeGreen.Dtos.Usuario
 {
-    public class ReadUsuarioDto
+    public class ReadLoginDto
     {
         [Required(ErrorMessage = "O campo nome é obrigatório")]
         public string Nome { get; set; }

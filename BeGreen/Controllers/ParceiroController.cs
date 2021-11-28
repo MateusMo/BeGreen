@@ -54,7 +54,7 @@ namespace BeGreen.Controllers
             {
                 var login = new Login
                 {
-                    Email = atualizarParceiro.Email,
+                    Email = atualizarParceiro.Email.ToLower(),
                     Senha = atualizarParceiro.Senha,
                     TipoCadastro = atualizarParceiro.TipoCadastro
                 };

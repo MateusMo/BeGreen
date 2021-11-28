@@ -2,6 +2,7 @@
 using BeGreen.Application;
 using BeGreen.Dtos.Oferta;
 using BeGreen.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace BeGreen.Controllers
         }
 
         [HttpGet]
-        [Route("OfertasParceiro/{id:int}")]
+        [Route("OfertasParceiro")]
         public ActionResult<Oferta> ListarOfertas(int codigoParceiro)
         {
             var ofertas = new List<Oferta>();
