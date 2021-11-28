@@ -84,10 +84,11 @@
             class="btn btn-secondary mr-1">Voltar</button>
           <button *ngIf="hideNext == false" type="submit" class="btn btn-primary"
             (click)="proximo()">Continuar</button>
-          <button [routerLinkActive]="['link-active']" [routerLink]="['/']" *ngIf="isBusiness != null" type="submit" class="btn btn-primary btn-block"
+            
+          <button [routerLinkActive]="['link-active']" [routerLink]="['/']" *ngIf="isBusiness != null" type="submit" class="btn btn-primary"
             (click)="cadastrarUsuario()">Cadastrar</button>
           <div class="center">
-            <a class="linkHover" [routerLinkActive]="['link-active']" [routerLink]="['/cadastro']">Já possui login?
+            <a class="linkHover" [routerLinkActive]="['link-active']" [routerLink]="['/']">Já possui login?
               Logar</a>
           </div>
         </div>
