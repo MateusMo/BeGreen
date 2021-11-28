@@ -12,8 +12,8 @@ namespace BeGreen.Dtos.EnderecoDto
         [Required(ErrorMessage = "O campo CEP é obrigatório")]
         public string Cep { get; set; }
 
-        [Required(ErrorMessage = "O campo lagradouro é obrigatório")]
-        public string Lagradouro { get; set; }
+        [Required(ErrorMessage = "O campo Logradouro é obrigatório")]
+        public string Logradouro { get; set; }
 
         [Required(ErrorMessage = "O campo número é obrigatório")]
         public int Numero { get; set; }

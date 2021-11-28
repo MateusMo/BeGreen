@@ -99,7 +99,7 @@ namespace BeGreen.Controllers
                 endereco.Cep = parceiroDto.EnderecoDto.Cep;
                 endereco.Complemento = parceiroDto.EnderecoDto.Complemento;
                 endereco.Numero = parceiroDto.EnderecoDto.Numero;
-                endereco.Lagradouro = parceiroDto.EnderecoDto.Lagradouro;
+                endereco.Logradouro = parceiroDto.EnderecoDto.Logradouro;
 
                 _parceiroApplication.Update(parceiro);
 

@@ -80,7 +80,7 @@ namespace BeGreen.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Cep = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Lagradouro = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Logradouro = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Numero = table.Column<int>(type: "int", nullable: false),
                     Complemento = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ParceiroId = table.Column<int>(type: "int", nullable: true)
