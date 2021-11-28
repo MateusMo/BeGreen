@@ -58,6 +58,11 @@
           <!--Cadastro Usuario-->
           <!--Cadastro Parceiro-->
           <div *ngIf="isBusiness == 1" class="form-group col-md-12">
+            <label for="inputEmail4">Nome</label>
+            <input [(ngModel)]="parceiro.nome" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+              id="inputCnpj" placeholder="CNPJ da Empresa">
+          </div>
+          <div *ngIf="isBusiness == 1" class="form-group col-md-12">
             <label for="inputEmail4">CNPJ</label>
             <input [(ngModel)]="parceiro.cnpj" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
               id="inputCnpj" placeholder="CNPJ da Empresa">
