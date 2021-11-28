@@ -24,7 +24,7 @@ namespace BeGreen.Repositorios
                 .Include(x => x.Usuario)
                 .Include(x => x.Parceiro)
                 .AsNoTracking()
-                .FirstOrDefault(x => x.Email == email && x.Senha == senha);
+                .FirstOrDefault(x => x.Email == email.ToLower() && x.Senha == senha);
         }
 
     }

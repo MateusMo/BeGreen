@@ -1,7 +1,7 @@
 ﻿using BeGreen.Application;
+using BeGreen.Dtos.Login;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace BeGreen.Controllers
 {
@@ -18,15 +18,16 @@ namespace BeGreen.Controllers
 
         [HttpPost]
         [Route("")]
-        public ActionResult<dynamic> Login([FromQuery] string email, string senha)
+        [AllowAnonymous]
+        public ActionResult<dynamic> Login([FromBody] ReadLoginDto login)
         {
-            if (string.IsNullOrEmpty(email))
+            if (string.IsNullOrEmpty(login.Email))
                 return BadRequest("Email inválido!");
 
-            if (string.IsNullOrEmpty(senha))
+            if (string.IsNullOrEmpty(login.Senha))
                 return BadRequest("Senha inválida!");
 
-            var user = _loginApplication.Login(email, senha);
+            var user = _loginApplication.Login(login.Email, login.Senha);
 
             if (user is null)
                 return NotFound("Email não encontrado!");

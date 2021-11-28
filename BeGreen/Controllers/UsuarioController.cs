@@ -43,7 +43,7 @@ namespace BeGreen.Controllers
         }
 
         [HttpPost]
-        public IActionResult CadastrarUsuario([FromBody] CreateUsuarioDto usuarioDto)
+        public IActionResult CadastrarUsuario([FromBody] CreateLoginDto usuarioDto)
         {
             var novoUsuario = _mapper.Map<Usuario>(usuarioDto);
 
@@ -53,7 +53,7 @@ namespace BeGreen.Controllers
             {
                 var login = new Login
                 {
-                    Email = novoUsuario.Email,
+                    Email = novoUsuario.Email.ToLower(),
                     Senha = novoUsuario.Senha,
                     TipoCadastro = novoUsuario.TipoCadastro
                 };
