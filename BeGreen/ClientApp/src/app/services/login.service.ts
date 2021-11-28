@@ -12,7 +12,6 @@ export class LoginService {
   constructor(private http:HttpClient) { }
 
   login(login:login): Observable<any> {
-    debugger;
     const headers = { 'content-type': 'application/json'}  
     const body = login;
     return this.http.post(this.loginUrl, body,{'headers':headers})

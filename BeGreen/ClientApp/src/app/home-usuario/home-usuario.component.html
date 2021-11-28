@@ -1,7 +1,12 @@
 <app-nav-menu></app-nav-menu>
 <div class="container-fluid">
     <div class="row justify-content-center">
-        
+        <div class="col-12">
+            <h1>Olá: {{nome}}</h1>
+        </div>
+        <div *ngIf="userType == '2'" class="col-12">
+            <button class="btn btn-primary" [routerLinkActive]="['link-active']" [routerLink]="['/casatroPromocao']" >Cadastro Ofertas</button>
+        </div>
         
         <div class="col-md-12 map bd-white">
             <agm-map [latitude]="lat" [longitude]="lng">

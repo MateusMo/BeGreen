@@ -17,6 +17,7 @@ import { CarteiraComponent } from './carteira/carteira.component';
 import { AgmCoreModule } from '@agm/core';
 import { CarbonoComponent } from './carbono/carbono.component';
 import { BlogComponent } from './blog/blog.component';
+import { CadastroPromocaoComponent } from './cadastro-promocao/cadastro-promocao.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { BlogComponent } from './blog/blog.component';
     CarteiraComponent,
     CarbonoComponent,
     BlogComponent,
+    CadastroPromocaoComponent,
     
   ],
   imports: [
@@ -50,7 +52,8 @@ import { BlogComponent } from './blog/blog.component';
       { path: 'carteira', component: CarteiraComponent },
       { path: 'carbono', component: CarbonoComponent },
       { path: 'homeUsuario', component: HomeUsuarioComponent },
-      { path: 'blog', component: BlogComponent } 
+      { path: 'blog', component: BlogComponent },
+      { path: 'casatroPromocao', component: CadastroPromocaoComponent } 
     ])
   ],
   providers: [],

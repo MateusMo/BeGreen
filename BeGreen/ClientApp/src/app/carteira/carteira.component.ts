@@ -15,7 +15,6 @@ export class CarteiraComponent implements OnInit {
   }
 
   gerarQrCode(business:number){
-    debugger;
     this.hideCards = true;
     switch ( business ) {
       case 1:
