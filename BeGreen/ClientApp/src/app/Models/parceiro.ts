@@ -10,10 +10,15 @@ export class parceiro{
 
     ramo?:string;
 
-    tipoDeCadastro?:number;
+    tipoCadastro?:number;
 
-    endereco?:string
-    //endereco
+    cep?:string;
+
+    logradouro?:string;
+
+    numero?:number;
+
+    complemento?:string;
 }
 
 

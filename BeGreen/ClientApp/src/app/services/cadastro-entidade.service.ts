@@ -11,6 +11,7 @@ import { usuario } from '../Models/usuario';
 export class CadastroEntidadeService {
 
   usuarioUrl = 'https://localhost:5001/Usuario';
+  parceiroUrl = 'https://localhost:5001/Parceiro';
   
   constructor(private http:HttpClient) { }
 
@@ -23,6 +24,6 @@ export class CadastroEntidadeService {
     debugger;
     const headers = { 'content-type': 'application/json'}  
     const body = parceiro;
-    return this.http.post(this.usuarioUrl, body,{'headers':headers})
+    return this.http.post(this.parceiroUrl, body,{'headers':headers})
   }
 }

@@ -78,8 +78,23 @@
             </select>
           </div>
           <div *ngIf="isBusiness == 1" class="form-group col-md-12">
-            <label for="inputEmail4">Endereço</label>
-            <input [(ngModel)]="parceiro.endereco" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+            <label for="inputEmail4">Cep</label>
+            <input [(ngModel)]="parceiro.cep" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+              id="inputEndereço" placeholder="Endereço">
+          </div>
+          <div *ngIf="isBusiness == 1" class="form-group col-md-12">
+            <label for="inputEmail4">Logradouro</label>
+            <input [(ngModel)]="parceiro.logradouro" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+              id="inputEndereço" placeholder="Endereço">
+          </div>
+          <div *ngIf="isBusiness == 1" class="form-group col-md-12">
+            <label for="inputEmail4">Numero</label>
+            <input [(ngModel)]="numero" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+              id="inputEndereço" placeholder="Endereço">
+          </div>
+          <div *ngIf="isBusiness == 1" class="form-group col-md-12">
+            <label for="inputEmail4">Complemento</label>
+            <input [(ngModel)]="parceiro.complemento" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
               id="inputEndereço" placeholder="Endereço">
           </div>
           <!--Cadastro Parceiro Fim-->

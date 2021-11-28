@@ -17,6 +17,7 @@ export class CadastroComponent implements OnInit {
   email: string;
   senha: string;
   genero: any;
+  numero:string
 
   //lógica de ngIf
   isBusiness: any = null;
@@ -65,14 +66,15 @@ export class CadastroComponent implements OnInit {
     else {
       this.parceiro.email = this.email;
       this.parceiro.senha = this.senha;
-      this.parceiro.tipoDeCadastro = 2;
+      this.parceiro.tipoCadastro = 2;
       this.parceiro.ramo = (<HTMLInputElement>document.getElementById("inputState2")).value;
+      this.parceiro.numero = Number(this.numero)
       //chamada api
       console.log(this.parceiro)
       this._cadastroEntidade.cadastroParceiro(this.parceiro).subscribe(response => {
-
+        alert('foi')
       },error => {
-
+        alert('erro')
       })
     }
   }
