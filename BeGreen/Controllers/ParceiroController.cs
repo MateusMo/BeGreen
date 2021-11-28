@@ -27,20 +27,24 @@ namespace BeGreen.Controllers
         }
 
         [HttpGet]
-        public List<Parceiro> ObterParceiros()
+        public List<ReadParceiroDto> ObterParceiros()
         {
             List<Parceiro> parceiros = _parceiroApplication.GetAll().ToList();
 
-            return parceiros;
+            var readParceirosDto = _mapper.Map<List<ReadParceiroDto>>(parceiros);
+
+            return readParceirosDto;
         }
 
         [HttpGet]
         [Route("{id:int}")]
-        public ActionResult<Parceiro> ObterParceiro(int id)
+        public ActionResult<ReadParceiroDto> ObterParceiro(int id)
         {
             var parceiro = _parceiroApplication.Get(id);
 
-            return Ok(parceiro);
+            var readParceiroDto = _mapper.Map<ReadParceiroDto>(parceiro);
+
+            return Ok(readParceiroDto);
         }
 
         [HttpPost]
@@ -80,13 +84,12 @@ namespace BeGreen.Controllers
 
             if (parceiro is not null)
             {
-                parceiro.Login.Email = atualizarParceiro.Login.Email;
-                parceiro.Login.Senha = atualizarParceiro.Login.Senha;
+                parceiro.Login.Email = atualizarParceiro.Email;
+                parceiro.Login.Senha = atualizarParceiro.Senha;
 
                 _loginApplication.Update(parceiro.Login);
 
                 parceiro.Cnpj = atualizarParceiro.Cnpj;
-                parceiro.Email = atualizarParceiro.Email;
                 parceiro.Ramo = atualizarParceiro.Ramo;
                 parceiro.Nome = atualizarParceiro.Nome;
 

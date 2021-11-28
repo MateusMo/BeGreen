@@ -4,6 +4,9 @@ namespace BeGreen.Dtos.Parceiro
 {
     public class UpdateParceiroDto
     {
+        [Required(ErrorMessage = "O campo id é obrigatório")]
+        public int Id { get; set; }
+
         [Required(ErrorMessage = "O campo nome é obrigatório")]
         public string Nome { get; set; }
 

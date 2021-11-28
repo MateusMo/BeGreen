@@ -6,6 +6,9 @@ namespace BeGreen.Dtos.Oferta
 {
     public class ReadOfertaDto
     {
+        [Required(ErrorMessage = "O campo id é obrigatório")]
+        public int Id { get; set; }
+
         [Required(ErrorMessage = "O campo título é obrigatório")]
         public string Titulo { get; set; }
 

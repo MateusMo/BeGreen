@@ -68,7 +68,9 @@ namespace BeGreen.Controllers
 
             _ofertaApplication.Add(oferta);
 
-            return Ok(oferta);
+            var ofertaRead = _mapper.Map<ReadOfertaDto>(oferta);
+
+            return Ok(ofertaRead);
         }
 
         [HttpPut]
