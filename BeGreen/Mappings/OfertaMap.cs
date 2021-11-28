@@ -37,7 +37,8 @@ namespace BeGreen.Mappings
             //Relacionamentos
             builder
                 .HasOne(x => x.Parceiro)
-                .WithMany(x => x.Ofertas);
+                .WithMany(x => x.Ofertas)
+                .HasForeignKey(x => x.CodigoParceiro);
         }
     }
 }

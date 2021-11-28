@@ -1,15 +1,10 @@
 ﻿using AutoMapper;
 using BeGreen.Application;
-using BeGreen.Context;
-using BeGreen.Dtos.ParceiroDto;
+using BeGreen.Dtos.Parceiro;
 using BeGreen.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BeGreen.Controllers
 {
@@ -41,7 +36,7 @@ namespace BeGreen.Controllers
 
         [HttpGet]
         [Route("{id:int}")]
-        public ActionResult<Parceiro> ObterParceiro([FromQuery] int id)
+        public ActionResult<Parceiro> ObterParceiro(int id)
         {
             var parceiro = _parceiroApplication.Get(id);
 
@@ -49,7 +44,7 @@ namespace BeGreen.Controllers
         }
 
         [HttpPost]
-        public IActionResult CadastrarParceiro([FromBody] CreateOfertaDto parceiroDto)
+        public IActionResult CadastrarParceiro([FromBody] CreateParceiroDto parceiroDto)
         {
             var atualizarParceiro = _mapper.Map<Parceiro>(parceiroDto);
 
@@ -57,11 +52,12 @@ namespace BeGreen.Controllers
 
             if (parceiro is null)
             {
-                var login = new Login();
-
-                login.Email = atualizarParceiro.Email;
-                login.Senha = atualizarParceiro.Senha;
-                login.TipoCadastro = atualizarParceiro.TipoCadastro;
+                var login = new Login
+                {
+                    Email = atualizarParceiro.Email,
+                    Senha = atualizarParceiro.Senha,
+                    TipoCadastro = atualizarParceiro.TipoCadastro
+                };
 
                 _loginApplication.Add(login);
 
@@ -76,7 +72,7 @@ namespace BeGreen.Controllers
         }
 
         [HttpPut]
-        public IActionResult AtualizarParceiro([FromBody] UpdateOfertaDto parceiroDto)
+        public IActionResult AtualizarParceiro([FromBody] UpdateParceiroDto parceiroDto)
         {
             var atualizarParceiro = _mapper.Map<Parceiro>(parceiroDto);
 

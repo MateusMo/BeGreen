@@ -1,4 +1,5 @@
 ﻿using BeGreen.Context;
+using BeGreen.Enums;
 using BeGreen.InterfaceRepositorio;
 using BeGreen.Models;
 using System;
@@ -15,6 +16,11 @@ namespace BeGreen.Application
         public LoginApplication(ILoginRepositorio loginRepositorio, ContextBase db) : base(db)
         {
             _loginRepositorio = loginRepositorio;
+        }
+
+        public Login Login(string email, string senha)
+        { 
+            return _loginRepositorio.Login(email, senha);
         }
 
         public IEnumerable<Login> GetAll()

@@ -10,5 +10,6 @@ namespace BeGreen.InterfaceRepositorio
 {
     public interface ILoginRepositorio : IRepositorioGenerico<Login>
     {
+        Login Login(string email, string senha);
     }
 }
