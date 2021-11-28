@@ -90,3 +90,13 @@ textarea:focus, input:focus, select:focus {
 .begreen{
   width: 60px;
 }
+
+.construcimg{
+  width: 700px;
+  padding-bottom: 50px;
+  margin-top: 50px;
+}
+
+.marg-bot{
+  margin-bottom: 70px;
+}
