@@ -17,9 +17,30 @@ namespace BeGreen.Application
             _loginRepositorio = loginRepositorio;
         }
 
+        public IEnumerable<Login> GetAll()
+        {
+            return _loginRepositorio.Get();
+        }
+
+        public Login Get(int id)
+        {
+            return _loginRepositorio.Get(id);
+        }
+
         public void Add(Login obj)
         {
             _loginRepositorio.Add(obj);
+            Commit();
+        }
+
+        public void Update(Login obj)
+        {
+            _loginRepositorio.Update(obj);
+            Commit();
+        }
+        public void Delete(int obj)
+        {
+            _loginRepositorio.Delete(obj);
             Commit();
         }
     }

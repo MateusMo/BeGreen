@@ -10,6 +10,6 @@ namespace BeGreen.InterfaceRepositorio
 {
     public interface IParceiroRepositorio : IRepositorioGenerico<Parceiro>
     {
-        Task<List<Parceiro>> ListarParceiros();
+        Parceiro ObterEmail(string email);
     }
 }

@@ -28,6 +28,6 @@ namespace BeGreen.Dtos.ParceiroDto
         [Required(ErrorMessage = "O campo tipo de usuário é obrigatório")]
         public ETipoCadastro TipoCadastro { get; set; }
 
-        public List<CreateParceiroDto> EnderecoDtos { get; set; }
+        public CreateParceiroDto EnderecoDto { get; set; }
     }
 }
