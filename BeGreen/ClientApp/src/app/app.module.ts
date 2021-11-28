@@ -15,6 +15,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { RedefinirSenhaComponent } from './redefinir-senha/redefinir-senha.component';
 import { CarteiraComponent } from './carteira/carteira.component';
 import { AgmCoreModule } from '@agm/core';
+import { CarbonoComponent } from './carbono/carbono.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { AgmCoreModule } from '@agm/core';
     CadastroComponent,
     RedefinirSenhaComponent,
     CarteiraComponent,
+    CarbonoComponent,
     
   ],
   imports: [
@@ -43,7 +45,9 @@ import { AgmCoreModule } from '@agm/core';
       { path: 'home-usuario', component: HomeUsuarioComponent },
       { path: 'cadastro', component: CadastroComponent },
       { path: 'redefinirSenha', component: RedefinirSenhaComponent },
-      { path: 'carteira', component: CarteiraComponent } 
+      { path: 'carteira', component: CarteiraComponent },
+      { path: 'carbono', component: CarbonoComponent },
+      { path: 'homeUsuario', component: HomeUsuarioComponent } 
     ])
   ],
   providers: [],
