@@ -25,7 +25,7 @@ import { CarteiraComponent } from './carteira/carteira.component';
     HomeUsuarioComponent,
     CadastroComponent,
     RedefinirSenhaComponent,
-    CarteiraComponent,
+    CarteiraComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -38,7 +38,7 @@ import { CarteiraComponent } from './carteira/carteira.component';
       { path: 'home-usuario', component: HomeUsuarioComponent },
       { path: 'cadastro', component: CadastroComponent },
       { path: 'redefinirSenha', component: RedefinirSenhaComponent },
-      { path: 'carteira', component: CarteiraComponent }
+      { path: 'carteira', component: CarteiraComponent } 
     ])
   ],
   providers: [],

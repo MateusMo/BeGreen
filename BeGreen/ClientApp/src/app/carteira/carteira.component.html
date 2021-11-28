@@ -1,64 +1,84 @@
 <app-nav-menu></app-nav-menu>
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="card" style="width: 18rem;">
+        <div *ngIf="hideCards == false" class="card" style="width: 18rem;">
             <img class="card-img-top" src="https://logosmarcas.net/wp-content/uploads/2021/03/TIM-Logo.png" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">PROMO TIM</h5>
               <p class="card-text">Ganhe 15% de desconto em recargas.</p>
               <p class="card-text">Prazo Expiração 01/01/2022.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" [routerLinkActive]="['link-active']" [routerLink]="['/qrCode']" (click)="gerarQrCode(1)" class="btn btn-primary">Gerar QrCode</a>
             </div>
           </div>
 
-          <div class="card" style="width: 18rem;">
+          <div *ngIf="hideCards == false" class="card" style="width: 18rem;">
             <img class="card-img-top img-responsive" src="https://www.mcdonalds.com.br/images/layout/mcdonalds-logo-bg-red.png" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">MHHMM Q DLÇ</h5>
               <p class="card-text">COMPROU UM BIG MAC LEVOU OUTRO.</p>
               <p class="card-text">Prazo Expiração 01/02/2022.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" [routerLinkActive]="['link-active']" [routerLink]="['/qrCode']" (click)="gerarQrCode(2)" class="btn btn-primary">Gerar QrCode</a>
             </div>
           </div>
 
-          <div class="card" style="width: 18rem;">
+          <div *ngIf="hideCards == false" class="card" style="width: 18rem;">
             <img class="card-img-top img-responsive" src="https://s2.glbimg.com/G0l76bdMTN_Uvd92lmI_-eut-c0=/0x0:1700x1065/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2017/v/P/SmPbYnRqqlX7pAzcn7hw/logopref.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Campanha de Vacinação 2022</h5>
               <p class="card-text">Venha se vacinar conta a gripe e receba 10% de desconto no iptu.</p>
               <p class="card-text">Prazo Expiração: 05/02/2022.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" [routerLinkActive]="['link-active']" [routerLink]="['/qrCode']" (click)="gerarQrCode(3)" class="btn btn-primary">Gerar QrCode</a>
             </div>
           </div>
 
-          <div class="card" style="width: 18rem;">
+          <div *ngIf="hideCards == false" class="card" style="width: 18rem;">
             <img class="card-img-top img-responsive" src="https://logodownload.org/wp-content/uploads/2017/02/sus-logo-0.png" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Campanha de Vacinação contra covid</h5>
               <p class="card-text">Venha se vacinar conta a covid e receba doses contra outras vacinas.</p>
               <p class="card-text">Prazo Expiração 01/12/2022.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" [routerLinkActive]="['link-active']" [routerLink]="['/qrCode']" (click)="gerarQrCode(4)" class="btn btn-primary">Gerar QrCode</a>
             </div>
           </div>
 
-          <div class="card" style="width: 18rem;">
+          <div *ngIf="hideCards == false" class="card" style="width: 18rem;">
             <img class="card-img-top img-responsive" src="https://media.greenpeace.org/GPIDoc/TR4/f/2/b/e/GP0STU6XQ.jpg?d63709061851" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Redução de CO2 2022</h5>
               <p class="card-text">Reduza a emissão em CO2 e retire um boné em pontos especificos das metropoles.</p>
               <p class="card-text">Prazo Expiração 01/03/2022.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" [routerLinkActive]="['link-active']" [routerLink]="['/qrCode']" (click)="gerarQrCode(5)" class="btn btn-primary">Gerar QrCode</a>
             </div>
           </div>
 
-          <div class="card" style="width: 18rem;">
+          <div *ngIf="hideCards == false" class="card" style="width: 18rem;">
             <img class="card-img-top img-responsive" src="https://www.comunicacao.sp.gov.br/wp-content/uploads/2019/03/assinatura-bg-pwrpnt-v4-01.png" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">BIKE SAMPA</h5>
               <p class="card-text">Utilize ciclovias da cidade e receba ingressos para o MASP.</p>
               <p class="card-text">Prazo Expiração 01/12/2021.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" [routerLinkActive]="['link-active']" [routerLink]="['/qrCode']" (click)="gerarQrCode(6)" class="btn btn-primary">Gerar QrCode</a>
             </div>
           </div>
+
+          <div *ngIf="hideCards == true" class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://i.stack.imgur.com/WVxGw.png" alt="Card image cap">
+            <div class="card-body">
+                <h3>Empresa:{{cards.empresa}}</h3>
+              <span class="card-text">C02 que os atingidos pela promoção deixaram de emitir: {{cards.co2NaoEmitido}}</span>
+              <br>
+              <span class="card-text">Expiração promoção: {{cards.prazoExpiracao}}</span>
+              <br>
+              <span class="card-text">Usuarios Alcançados: {{cards.usuariosAlcancados}}</span>
+              <br>
+              <span class="card-text">Pontos de Reitrada da Promoção: {{cards.pontosDeRetirada}}</span>
+              <br>
+            </div>
+          </div>
+            <div class="col-12" *ngIf="hideCards == true">
+                <button (click)="getCardsBack()" class="btn btn-primary">Voltar</button>
+            </div>
+          
+
     </div>
 </div>
