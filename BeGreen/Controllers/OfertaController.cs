@@ -24,12 +24,20 @@ namespace BeGreen.Controllers
         }
 
         [HttpGet]
-        [Route("")]
-        public List<Oferta> ListarOfertas()
+        [Route("OfertasParceiro/{id:int}")]
+        public ActionResult<Oferta> ListarOfertas(int codigoParceiro)
         {
-            List<Oferta> ofertas = _ofertaApplication.GetAll().ToList();
+            var ofertas = new List<Oferta>();
 
-            return ofertas;
+            if (codigoParceiro != 0)
+                ofertas = _ofertaApplication.ObterOfertasParceiro(codigoParceiro).ToList();
+
+            if (ofertas.Any() is false)
+                return NotFound("Nenhuma oferta cadastrada!");
+
+            var result = _mapper.Map<ReadOfertaDto>(ofertas);
+
+            return Ok(result);
         }
 
         [HttpGet]

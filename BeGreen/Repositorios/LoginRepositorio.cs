@@ -21,6 +21,9 @@ namespace BeGreen.Repositorios
         public Login Login(string email, string senha)
         {
             return _login
+                .Include(x => x.Usuario)
+                .Include(x => x.Parceiro)
+                .AsNoTracking()
                 .FirstOrDefault(x => x.Email == email && x.Senha == senha);
         }
 

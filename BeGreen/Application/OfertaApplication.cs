@@ -3,8 +3,6 @@ using BeGreen.InterfaceRepositorio;
 using BeGreen.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BeGreen.Application
 {
@@ -15,6 +13,11 @@ namespace BeGreen.Application
         public OfertaApplication(IOfertaRepositorio ofertaRepositorio, ContextBase db) : base(db)
         {
             _ofertaRepositorio = ofertaRepositorio;
+        }
+
+        public IEnumerable<Oferta> ObterOfertasParceiro(int codigoParceiro)
+        {
+            return _ofertaRepositorio.ListarOfertasParceiro(codigoParceiro);
         }
 
         public IEnumerable<Oferta> GetAll()

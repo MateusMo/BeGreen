@@ -1,11 +1,11 @@
 ﻿using BeGreen.Application;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace BeGreen.Controllers
 {
     [ApiController]
-    [AllowAnonymous]
     [Route("[controller]")]
     public class LoginController : ControllerBase
     {
@@ -18,7 +18,7 @@ namespace BeGreen.Controllers
 
         [HttpPost]
         [Route("")]
-        public IActionResult Login([FromQuery] string email, string senha)
+        public ActionResult<dynamic> Login([FromQuery] string email, string senha)
         {
             if (string.IsNullOrEmpty(email))
                 return BadRequest("Email inválido!");
@@ -29,9 +29,26 @@ namespace BeGreen.Controllers
             var user = _loginApplication.Login(email, senha);
 
             if (user is null)
-                NotFound("Email não encontrado!");
+                return NotFound("Email não encontrado!");
 
-            return Ok();
+            user.Senha = "";
+
+            if (user.Usuario is not null)
+            {
+                return new
+                {
+                    nome = user.Usuario.Nome,
+                    email = user.Email,
+                    tipoCadastro = user.TipoCadastro
+                };
+            }
+
+            return new
+            {
+                nome = user.Parceiro.Nome,
+                email = user.Email,
+                tipoCadastro = user.TipoCadastro
+            };
         }
 
     }
