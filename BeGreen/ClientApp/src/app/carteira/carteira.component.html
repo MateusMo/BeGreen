@@ -64,7 +64,7 @@
           <!--FIM CARDS-->
 
           <!--QR CODE-->
-          <div *ngIf="hideCards == true" class="card" style="width: 18rem;">
+          <div *ngIf="hideCards == true" class="card" style="width: 20rem;">
             <img class="card-img-top" src="https://i.stack.imgur.com/WVxGw.png" alt="Card image cap">
             <div class="card-body">
                 <h3>Empresa:{{cards.empresa}}</h3>
@@ -79,8 +79,8 @@
             </div>
           </div>
           <!--FIM QR CODE-->
-            <div class="col-12" *ngIf="hideCards == true">
-                <button (click)="getCardsBack()" class="btn btn-primary">Voltar</button>
+            <div class="col-12 margin" *ngIf="hideCards == true">
+                <button (click)="getCardsBack()" class="btn btn-secondary ">Voltar</button>
             </div>
 
           

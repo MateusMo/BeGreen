@@ -54,7 +54,7 @@ export class CadastroComponent implements OnInit {
         this.usuario.genero = 1;
       } else if (this.genero == 'Outro') {
         this.usuario.genero = 3
-      }
+      } 
       console.log(this.usuario)
       //chamada api
       this._cadastroEntidade.cadastroUsuario(this.usuario).subscribe(

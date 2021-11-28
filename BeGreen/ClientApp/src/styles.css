@@ -28,6 +28,11 @@ code {
   border-color: #F0EEF1;
 }
 
+.margin{
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
 .title{
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
@@ -88,7 +93,8 @@ textarea:focus, input:focus, select:focus {
 }
 
 .begreen{
-  width: 60px;
+  width: 120px;
+  margin: 10px;
 }
 
 .construcimg{
@@ -99,4 +105,40 @@ textarea:focus, input:focus, select:focus {
 
 .marg-bot{
   margin-bottom: 70px;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-img-top {
+  object-fit: cover;
+  padding-top: 0px;
+  
+}
+
+.card-top{
+  max-width: 70px;
+  min-width: 70px;
+  min-height: 40px;
+  margin-top: 20px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 0.25rem;
+  margin: 20px;
 }
