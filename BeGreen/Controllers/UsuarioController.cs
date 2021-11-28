@@ -16,8 +16,8 @@ namespace BeGreen.Controllers
         private readonly LoginApplication _loginApplication;
         private readonly IMapper _mapper;
 
-        public UsuarioController(IMapper mapper, 
-            UsuarioApplication usuarioApplication, 
+        public UsuarioController(IMapper mapper,
+            UsuarioApplication usuarioApplication,
             LoginApplication loginApplication)
         {
             _mapper = mapper;
@@ -26,11 +26,13 @@ namespace BeGreen.Controllers
         }
 
         [HttpGet]
-        public List<Usuario> ListarUsuarios()
+        public List<ReadUsuarioDto> ListarUsuarios()
         {
             List<Usuario> usuarios = _usuarioApplication.GetAll().ToList();
 
-            return usuarios;
+            var usuariosRead = _mapper.Map<List<ReadUsuarioDto>>(usuarios);
+
+            return usuariosRead;
         }
 
         [HttpGet]
@@ -43,7 +45,7 @@ namespace BeGreen.Controllers
         }
 
         [HttpPost]
-        public IActionResult CadastrarUsuario([FromBody] CreateLoginDto usuarioDto)
+        public IActionResult CadastrarUsuario([FromBody] CreateUsuarioDto usuarioDto)
         {
             var novoUsuario = _mapper.Map<Usuario>(usuarioDto);
 
@@ -69,6 +71,6 @@ namespace BeGreen.Controllers
 
             return BadRequest("Usuário já cadastrado!");
         }
-        
+
     }
 }

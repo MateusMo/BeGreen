@@ -13,8 +13,8 @@ namespace BeGreen.Profiles
         public ParceiroProfile()
         {
             CreateMap<CreateParceiroDto, Parceiro>();
-            CreateMap<Parceiro, CreateParceiroDto>();
-            CreateMap<CreateParceiroDto, Parceiro>();
+            CreateMap<Parceiro, ReadParceiroDto>();
+            CreateMap<UpdateParceiroDto, Parceiro>();
         }
     }
 }

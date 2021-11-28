@@ -1,4 +1,6 @@
-﻿using BeGreen.Application;
+﻿using AutoMapper;
+using BeGreen.Application;
+using BeGreen.Dtos.Oferta;
 using BeGreen.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -12,18 +14,23 @@ namespace BeGreen.Controllers
     {
         private readonly RelatorioApplication _relatorioApplication;
 
-        public RelatorioController(RelatorioApplication relatorioApplication)
+        private readonly IMapper _mapper;
+
+        public RelatorioController(RelatorioApplication relatorioApplication, IMapper mapper)
         {
             _relatorioApplication = relatorioApplication;
+            _mapper = mapper;
         }
 
         [HttpGet]
         [Route("")]
-        public async Task<List<Oferta>> ListarOfertas()
+        public async Task<List<ReadOfertaDto>> ListarOfertas()
         {
             var ofertas = await _relatorioApplication.ListarOfertas();
 
-            return ofertas;
+            var ofertasRead = _mapper.Map<List<ReadOfertaDto>>(ofertas);
+
+            return ofertasRead;
         }
 
     }

@@ -13,8 +13,8 @@ namespace BeGreen.Profiles
         public OfertaProfile()
         {
             CreateMap<CreateOfertaDto, Oferta>();
-            CreateMap<Oferta, CreateOfertaDto>();
-            CreateMap<CreateOfertaDto, Oferta>();
+            CreateMap<Oferta, ReadOfertaDto>();
+            CreateMap<UpdateOfertaDto, Oferta>();
         }
     }
 }

@@ -12,9 +12,9 @@ namespace BeGreen.Profiles
     {
         public UsuarioProfile()
         {
-            CreateMap<CreateLoginDto, Usuario>();
-            CreateMap<Usuario, ReadLoginDto>();
-            CreateMap<UpdateLoginDto, Usuario>();
+            CreateMap<CreateUsuarioDto, Usuario>();
+            CreateMap<Usuario, ReadUsuarioDto>();
+            CreateMap<UpdateUsuarioDto, Usuario>();
         }
     }
 }
