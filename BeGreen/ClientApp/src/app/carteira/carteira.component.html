@@ -1,6 +1,7 @@
 <app-nav-menu></app-nav-menu>
 <div class="container-fluid">
     <div class="row justify-content-center">
+        <!--INICIO CARDS-->
         <div *ngIf="hideCards == false" class="card" style="width: 18rem;">
             <img class="card-img-top" src="https://logosmarcas.net/wp-content/uploads/2021/03/TIM-Logo.png" alt="Card image cap">
             <div class="card-body">
@@ -60,7 +61,9 @@
               <a href="#" [routerLinkActive]="['link-active']" [routerLink]="['/qrCode']" (click)="gerarQrCode(6)" class="btn btn-primary">Gerar QrCode</a>
             </div>
           </div>
+          <!--FIM CARDS-->
 
+          <!--QR CODE-->
           <div *ngIf="hideCards == true" class="card" style="width: 18rem;">
             <img class="card-img-top" src="https://i.stack.imgur.com/WVxGw.png" alt="Card image cap">
             <div class="card-body">
@@ -75,9 +78,11 @@
               <br>
             </div>
           </div>
+          <!--FIM QR CODE-->
             <div class="col-12" *ngIf="hideCards == true">
                 <button (click)="getCardsBack()" class="btn btn-primary">Voltar</button>
             </div>
+
           
 
     </div>
