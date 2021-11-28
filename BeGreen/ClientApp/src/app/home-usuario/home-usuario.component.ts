@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-usuario.component.css']
 })
 export class HomeUsuarioComponent implements OnInit {
-
+  title = 'My first AGM project';
+  lat = 51.678418;
+  lng = 7.809007;
   constructor() { }
 
   ngOnInit() {
   }
 
 }
+
+

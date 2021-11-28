@@ -3,3 +3,7 @@
     margin-top: 30px;
     padding-bottom: 50px;
 }
+
+agm-map {
+    height: 500px;
+  }

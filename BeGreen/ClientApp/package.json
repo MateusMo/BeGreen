@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^3.0.0-beta.0",
     "@angular/animations": "8.2.12",
     "@angular/common": "8.2.12",
     "@angular/compiler": "8.2.12",
@@ -24,6 +25,7 @@
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@nguniversal/module-map-ngfactory-loader": "8.1.1",
     "@sweetalert2/ngx-sweetalert2": "^10.0.0",
+    "angular2-google-maps": "^0.17.0",
     "bootstrap": "^4.6.0",
     "core-js": "^3.8.3",
     "jquery": "^3.5.1",
@@ -42,6 +44,7 @@
     "@angular/cli": "^8.3.29",
     "@angular/compiler-cli": "^8.2.14",
     "@angular/language-service": "^8.2.14",
+    "@types/googlemaps": "^3.39.13",
     "@types/jasmine": "~3.4.4",
     "@types/jasminewd2": "~2.0.8",
     "@types/node": "~12.11.6",

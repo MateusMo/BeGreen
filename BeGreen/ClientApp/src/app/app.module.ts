@@ -14,6 +14,7 @@ import { HomeUsuarioComponent } from './home-usuario/home-usuario.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { RedefinirSenhaComponent } from './redefinir-senha/redefinir-senha.component';
 import { CarteiraComponent } from './carteira/carteira.component';
+import { AgmCoreModule } from '@agm/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,12 +26,16 @@ import { CarteiraComponent } from './carteira/carteira.component';
     HomeUsuarioComponent,
     CadastroComponent,
     RedefinirSenhaComponent,
-    CarteiraComponent
+    CarteiraComponent,
+    
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyABybJZfNXwjLW10vkxSAdpmEEZHmxsaJ8'
+    }), 
     RouterModule.forRoot([
       { path: '', component: LoginComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
