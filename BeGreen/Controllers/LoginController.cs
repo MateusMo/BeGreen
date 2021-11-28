@@ -1,15 +1,6 @@
-﻿using AutoMapper;
-using BeGreen.Application;
-using BeGreen.Context;
-using BeGreen.Models;
+﻿using BeGreen.Application;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BeGreen.Controllers
 {
@@ -20,19 +11,26 @@ namespace BeGreen.Controllers
     {
         private readonly LoginApplication _loginApplication;
 
-        private readonly IMapper _mapper;
-
-        public LoginController(IMapper mapper, LoginApplication loginApplication)
+        public LoginController(LoginApplication loginApplication)
         {
-            _mapper = mapper;
             _loginApplication = loginApplication;
         }
 
         [HttpPost]
         [Route("")]
-        public async Task<IActionResult> Login(string email, string senha)
+        public IActionResult Login([FromQuery] string email, string senha)
         {
-            //var user = _loginApplication.
+            if (string.IsNullOrEmpty(email))
+                return BadRequest("Email inválido!");
+
+            if (string.IsNullOrEmpty(senha))
+                return BadRequest("Senha inválida!");
+
+            var user = _loginApplication.Login(email, senha);
+
+            if (user is null)
+                NotFound("Email não encontrado!");
+
             return Ok();
         }
 

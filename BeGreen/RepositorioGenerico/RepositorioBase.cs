@@ -60,8 +60,9 @@ namespace BeGreen.Repositorios
         #region Disposed https://docs.microsoft.com/pt-br/dotnet/standard/garbage-collection/implementing-dispose
         // Flag: Has Dispose already been called?
         bool disposed = false;
+
         // Instantiate a SafeHandle instance.
-        SafeHandle handle = new SafeFileHandle(IntPtr.Zero, true);
+        readonly SafeHandle handle = new SafeFileHandle(IntPtr.Zero, true);
 
 
 

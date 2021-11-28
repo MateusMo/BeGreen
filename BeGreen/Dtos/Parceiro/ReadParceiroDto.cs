@@ -1,13 +1,8 @@
-﻿using BeGreen.Enums;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace BeGreen.Dtos.ParceiroDto
+namespace BeGreen.Dtos.Parceiro
 {
-    public class ReadOfertaDto
+    public class ReadParceiroDto
     {
         [Required(ErrorMessage = "O campo nome é obrigatório")]
         public string Nome { get; set; }

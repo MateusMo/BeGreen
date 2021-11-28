@@ -1,15 +1,11 @@
 ﻿using AutoMapper;
 using BeGreen.Application;
-using BeGreen.Context;
 using BeGreen.Dtos.Oferta;
 using BeGreen.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BeGreen.Controllers
 {
@@ -28,7 +24,8 @@ namespace BeGreen.Controllers
         }
 
         [HttpGet]
-        public List<Oferta> ObterOfertas()
+        [Route("")]
+        public List<Oferta> ListarOfertas()
         {
             List<Oferta> ofertas = _ofertaApplication.GetAll().ToList();
 
@@ -37,7 +34,7 @@ namespace BeGreen.Controllers
 
         [HttpGet]
         [Route("{id:int}")]
-        public ActionResult<Oferta> ObterOferta([FromQuery] int id)
+        public ActionResult<Oferta> ObterOferta(int id)
         {
             var oferta = _ofertaApplication.Get(id);
 
@@ -48,27 +45,23 @@ namespace BeGreen.Controllers
         }
 
         [HttpPost]
+        [Route("")]
         public IActionResult CadastrarOferta([FromBody] CreateOfertaDto ofertaDto)
         {
             var oferta = _mapper.Map<Oferta>(ofertaDto);
 
-            try
-            {
-                _ofertaApplication.Add(oferta);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return BadRequest("Oferta já cadastrado!");
+            _ofertaApplication.Add(oferta);
+
+            return Ok(oferta);
         }
 
         [HttpPut]
+        [Route("")]
         public IActionResult AtualizarOferta([FromBody] UpdateOfertaDto ofertaDto)
         {
             var ofertaUpdate = _mapper.Map<Oferta>(ofertaDto);
 
-            var oferta = _ofertaApplication.Get(ofertaUpdate.Id);
+            var oferta = _ofertaApplication.Get(ofertaDto.Id);
 
             if (oferta is not null)
             {
@@ -84,12 +77,12 @@ namespace BeGreen.Controllers
                 return Ok("Oferta atualizada com sucesso!");
             }
 
-            return BadRequest("Ocorreu um erro ao atualizar o Oferta");
+            return NotFound("Oferta não encontrada!");
         }
 
         [HttpDelete]
         [Route("{id:int}")]
-        public IActionResult DeletarOferta([FromQuery] int id)
+        public IActionResult DeletarOferta(int id)
         {
             var oferta = _ofertaApplication.Get(id);
 

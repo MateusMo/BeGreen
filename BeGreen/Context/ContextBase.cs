@@ -20,7 +20,6 @@ namespace BeGreen.Context
 
         public ContextBase(DbContextOptions<ContextBase> options) : base(options)
         {
-            Database.EnsureCreated();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -29,7 +28,6 @@ namespace BeGreen.Context
             modelBuilder.ApplyConfiguration(new ParceiroMap());
             modelBuilder.ApplyConfiguration(new OfertaMap());
             modelBuilder.ApplyConfiguration(new LoginMap());
-            modelBuilder.ApplyConfiguration(new EnderecoMap());
         }
 
     }

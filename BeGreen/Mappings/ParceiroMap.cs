@@ -37,15 +37,6 @@ namespace BeGreen.Mappings
             //Indices
             builder.HasIndex(x => x.Id, "IX_Id_Parceiro")
                 .IsUnique();
-
-            //Relacionamentos
-            builder
-                .HasMany(x => x.Enderecos)
-                .WithOne(x => x.Parceiro);
-
-            //builder
-            //    .HasOne(x => x.Login)
-            //    .WithOne(x => x.Parceiro);
         }
     }
 }

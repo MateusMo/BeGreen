@@ -1,13 +1,15 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-12">
-            <a [routerLinkActive]="['link-active']" [routerLink]="['/']">voltar</a>
-         </div>
+        
          <div>
             <img class="img-fluid marg-bot" src="../../assets/img/logo.jpg">
           </div>
          <div>
             <img class="img-fluid construcimg" src="../../assets/img/emconstrucao.jpg">
          </div>
+         <div class="col-12">
+            <button [routerLinkActive]="['link-active']" [routerLink]="['/']" type="submit"
+             class="btn btn-secondary mr-1 marg-bot">Voltar</button>
+          </div>
     </div>
 </div>

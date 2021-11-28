@@ -47,11 +47,14 @@ namespace BeGreen
             services.AddScoped<UsuarioApplication>();
             services.AddScoped<ParceiroApplication>();
             services.AddScoped<LoginApplication>();
+            services.AddScoped<OfertaApplication>();
+            services.AddScoped<RelatorioApplication>();
 
             //Interface e Repositorio
             services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
             services.AddScoped<IParceiroRepositorio, ParceiroRepositorio>();
             services.AddScoped<ILoginRepositorio, LoginRepositorio>();
+            services.AddScoped<IOfertaRepositorio, OfertaRepositorio>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

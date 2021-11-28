@@ -1,17 +1,10 @@
 ﻿using AutoMapper;
 using BeGreen.Application;
-using BeGreen.Context;
 using BeGreen.Dtos.Usuario;
-using BeGreen.Enums;
-using BeGreen.InterfaceRepositorio;
 using BeGreen.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BeGreen.Controllers
 {
@@ -33,7 +26,7 @@ namespace BeGreen.Controllers
         }
 
         [HttpGet]
-        public List<Usuario> ObterUsuarios()
+        public List<Usuario> ListarUsuarios()
         {
             List<Usuario> usuarios = _usuarioApplication.GetAll().ToList();
 
@@ -42,7 +35,7 @@ namespace BeGreen.Controllers
 
         [HttpGet]
         [Route("{id:int}")]
-        public ActionResult<Usuario> ObterUsuario([FromQuery]int id)
+        public ActionResult<Usuario> ObterUsuario(int id)
         {
             var usuario = _usuarioApplication.Get(id);
 
@@ -58,11 +51,12 @@ namespace BeGreen.Controllers
 
             if (usuario is null)
             {
-                var login = new Login();
-
-                login.Email = novoUsuario.Email;
-                login.Senha = novoUsuario.Senha;
-                login.TipoCadastro = novoUsuario.TipoCadastro;
+                var login = new Login
+                {
+                    Email = novoUsuario.Email,
+                    Senha = novoUsuario.Senha,
+                    TipoCadastro = novoUsuario.TipoCadastro
+                };
 
                 _loginApplication.Add(login);
 

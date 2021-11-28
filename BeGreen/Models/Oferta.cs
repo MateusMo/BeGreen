@@ -23,6 +23,8 @@ namespace BeGreen.Models
 
         public double Longitude { get; set; }
 
+        public int CodigoParceiro { get; set; }
+
         public Parceiro Parceiro { get; set; }
     }
 }

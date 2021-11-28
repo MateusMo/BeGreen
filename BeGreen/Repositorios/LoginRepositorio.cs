@@ -18,6 +18,11 @@ namespace BeGreen.Repositorios
             _login = db.Set<Login>();
         }
 
+        public Login Login(string email, string senha)
+        {
+            return _login
+                .FirstOrDefault(x => x.Email == email && x.Senha == senha);
+        }
 
     }
 }
