@@ -34,7 +34,7 @@
           <div *ngIf="isBusiness == 0" class="form-group col-md-12">
             <label for="inputEmail4">Nome</label>
             <input [(ngModel)]="usuario.nome" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
-              id="inputNome" placeholder="Cpf">
+              id="inputNome" placeholder="Nome">
           </div>
           <div *ngIf="isBusiness == 0" class="form-group col-md-12">
             <label for="inputEmail4">CPF</label>
@@ -84,7 +84,7 @@
             class="btn btn-secondary mr-1">Voltar</button>
           <button *ngIf="hideNext == false" type="submit" class="btn btn-primary"
             (click)="proximo()">Continuar</button>
-          <button *ngIf="isBusiness != null" type="submit" class="btn btn-primary btn-block"
+          <button [routerLinkActive]="['link-active']" [routerLink]="['/']" *ngIf="isBusiness != null" type="submit" class="btn btn-primary btn-block"
             (click)="cadastrarUsuario()">Cadastrar</button>
           <div class="center">
             <a class="linkHover" [routerLinkActive]="['link-active']" [routerLink]="['/cadastro']">Já possui login?

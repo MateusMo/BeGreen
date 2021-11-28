@@ -18,11 +18,11 @@ namespace BeGreen.Repositorios
             _usuario = db.Set<Usuario>();
         }
 
-        public async Task<Usuario> ObterEmail(string email)
+        public Usuario ObterEmail(string email)
         {
-            return await _usuario
+            return _usuario
                 .AsNoTracking()
-                .FirstOrDefaultAsync(x => x.Email == email);
+                .FirstOrDefault(x => x.Email == email);
         }
 
     }

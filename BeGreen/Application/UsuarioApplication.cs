@@ -17,9 +17,9 @@ namespace BeGreen.Application
             _usuarioReporitorio = usuarioReporitorio;
         }
 
-        public async Task<Usuario> ObterEmail(string email)
+        public Usuario ObterEmail(string email)
         {
-            return await _usuarioReporitorio.ObterEmail(email);
+            return  _usuarioReporitorio.ObterEmail(email);
         }
 
         public IEnumerable<Usuario> GetAll()

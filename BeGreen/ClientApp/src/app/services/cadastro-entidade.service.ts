@@ -10,12 +10,11 @@ import { usuario } from '../Models/usuario';
 })
 export class CadastroEntidadeService {
 
-  usuarioUrl = 'https://localhost:5001/Cadastro';
+  usuarioUrl = 'https://localhost:5001/Usuario';
   
   constructor(private http:HttpClient) { }
 
   cadastroUsuario(usuario:usuario): Observable<any> {
-    debugger;
     const headers = { 'content-type': 'application/json'}  
     const body = usuario;
     return this.http.post(this.usuarioUrl, body,{'headers':headers})

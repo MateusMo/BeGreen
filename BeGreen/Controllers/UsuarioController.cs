@@ -56,7 +56,7 @@ namespace BeGreen.Controllers
 
             var usuario = _usuarioApplication.ObterEmail(novoUsuario.Email);
 
-            if (usuario is not null)
+            if (usuario is null)
             {
                 var login = new Login();
 

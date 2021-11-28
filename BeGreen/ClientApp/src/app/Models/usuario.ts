@@ -1,11 +1,19 @@
 export class usuario{
+
     nome?:string;
+
     email?:string;
+
     senha?:string;
+
     cpf?:string;
+
     genero?:number;
+
     dataNascimento?:Date;
+
     tipoCadastro?:number
+    
 }
 
 // public int Id { get; set; }
