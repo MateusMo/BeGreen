@@ -1,0 +1,17 @@
+C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Application\bin\Debug\net5.0\BeeGreen.Application.deps.json
+C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Application\bin\Debug\net5.0\BeeGreen.Application.dll
+C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Application\bin\Debug\net5.0\ref\BeeGreen.Application.dll
+C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Application\bin\Debug\net5.0\BeeGreen.Application.pdb
+C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Application\bin\Debug\net5.0\BeeGreen.Domain.dll
+C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Application\bin\Debug\net5.0\BeeGreen.Infra.dll
+C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Application\bin\Debug\net5.0\BeeGreen.Infra.pdb
+C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Application\bin\Debug\net5.0\BeeGreen.Domain.pdb
+C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Application\obj\Debug\net5.0\BeeGreen.Application.csproj.AssemblyReference.cache
+C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Application\obj\Debug\net5.0\BeeGreen.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Application\obj\Debug\net5.0\BeeGreen.Application.AssemblyInfoInputs.cache
+C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Application\obj\Debug\net5.0\BeeGreen.Application.AssemblyInfo.cs
+C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Application\obj\Debug\net5.0\BeeGreen.Application.csproj.CoreCompileInputs.cache
+C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Application\obj\Debug\net5.0\BeeGreen.Application.csproj.CopyComplete
+C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Application\obj\Debug\net5.0\BeeGreen.Application.dll
+C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Application\obj\Debug\net5.0\ref\BeeGreen.Application.dll
+C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Application\obj\Debug\net5.0\BeeGreen.Application.pdb

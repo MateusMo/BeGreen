@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "71f63498-9a82-43e2-9d54-1f590e62e1d6": {
+      "ProjectGuid": "71f63498-9a82-43e2-9d54-1f590e62e1d6",
+      "DisplayName": "BeeGreen.Application",
+      "ColorIndex": 0
+    },
+    "5d7484ee-f1c8-4e8f-94bf-9e3b904b3713": {
+      "ProjectGuid": "5d7484ee-f1c8-4e8f-94bf-9e3b904b3713",
+      "DisplayName": "BeeGreen.Application",
+      "ColorIndex": 1
+    },
+    "bd52e2ea-88aa-4aa7-80e9-13600b743191": {
+      "ProjectGuid": "bd52e2ea-88aa-4aa7-80e9-13600b743191",
+      "DisplayName": "BeGreen",
+      "ColorIndex": 2
+    },
+    "0c0d715d-0e51-4d5c-adef-fd2465485c82": {
+      "ProjectGuid": "0c0d715d-0e51-4d5c-adef-fd2465485c82",
+      "DisplayName": "BeeGreen.Domain",
+      "ColorIndex": 3
+    },
+    "8f54eca1-4571-4ff8-9200-c0e36ebee3d7": {
+      "ProjectGuid": "8f54eca1-4571-4ff8-9200-c0e36ebee3d7",
+      "DisplayName": "BeeGreen.Infra",
+      "ColorIndex": 4
+    }
+  },
+  "NextColorIndex": 5
+}

@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
-using BeGreen.Application;
+using BeGreen.Application.Applications;
 using BeGreen.Dtos.Oferta;
-using BeGreen.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;

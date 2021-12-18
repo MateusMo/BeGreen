@@ -1,9 +1,5 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BeGreen.Models;
+using BeGreen.Domain.Entidades;
 using BeGreen.Dtos.Usuario;
 
 namespace BeGreen.Profiles

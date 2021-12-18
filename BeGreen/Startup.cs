@@ -1,10 +1,9 @@
-using BeGreen.Application;
-using BeGreen.Context;
-using BeGreen.InterfaceRepositorio;
+using BeGreen.Application.Applications;
+using BeGreen.Domain.Interfaces.Repositorios;
+using BeGreen.Infra.Contexto;
 using BeGreen.Repositorios;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;

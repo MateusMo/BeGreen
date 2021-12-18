@@ -1,4 +1,4 @@
-﻿using BeGreen.Enums;
+﻿using BeGreen.Domain.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace BeGreen.Dtos.Parceiro
