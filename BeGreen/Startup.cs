@@ -1,10 +1,9 @@
-using BeGreen.Application;
-using BeGreen.Context;
-using BeGreen.InterfaceRepositorio;
+using BeGreen.Application.Applications;
+using BeGreen.Domain.Interfaces.Repositorios;
+using BeGreen.Infra.Contexto;
 using BeGreen.Repositorios;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -36,7 +35,7 @@ namespace BeGreen
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddDbContext<ContextBase>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlConnection")));
+            services.AddDbContext<ContextBase>(options => options.UseSqlite(Configuration.GetConnectionString("SqlConnection")));
 
             services.AddSwaggerGen(c =>
             {

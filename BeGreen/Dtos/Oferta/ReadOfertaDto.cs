@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BeGreen.Dtos.Parceiro;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace BeGreen.Dtos.Oferta
@@ -25,5 +26,7 @@ namespace BeGreen.Dtos.Oferta
 
         [Required(ErrorMessage = "O campo código parceiro é obrigatório")]
         public int CodigoParceiro { get; set; }
+
+        public ReadParceiroDto Parceiro { get; set; }
     }
 }

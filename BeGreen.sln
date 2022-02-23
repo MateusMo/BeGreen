@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31624.102
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeGreen", "BeGreen\BeGreen.csproj", "{BD52E2EA-88AA-4AA7-80E9-13600B743191}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeGreen", "BeGreen\BeGreen.csproj", "{BD52E2EA-88AA-4AA7-80E9-13600B743191}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeeGreen.Application", "BeeGreen.Application\BeeGreen.Application.csproj", "{5D7484EE-F1C8-4E8F-94BF-9E3B904B3713}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeeGreen.Domain", "BeeGreen.Domain\BeeGreen.Domain.csproj", "{0C0D715D-0E51-4D5C-ADEF-FD2465485C82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeeGreen.Infra", "BeeGreen.Infra\BeeGreen.Infra.csproj", "{8F54ECA1-4571-4FF8-9200-C0E36EBEE3D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{BD52E2EA-88AA-4AA7-80E9-13600B743191}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD52E2EA-88AA-4AA7-80E9-13600B743191}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD52E2EA-88AA-4AA7-80E9-13600B743191}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D7484EE-F1C8-4E8F-94BF-9E3B904B3713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D7484EE-F1C8-4E8F-94BF-9E3B904B3713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D7484EE-F1C8-4E8F-94BF-9E3B904B3713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D7484EE-F1C8-4E8F-94BF-9E3B904B3713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C0D715D-0E51-4D5C-ADEF-FD2465485C82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C0D715D-0E51-4D5C-ADEF-FD2465485C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C0D715D-0E51-4D5C-ADEF-FD2465485C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C0D715D-0E51-4D5C-ADEF-FD2465485C82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F54ECA1-4571-4FF8-9200-C0E36EBEE3D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F54ECA1-4571-4FF8-9200-C0E36EBEE3D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F54ECA1-4571-4FF8-9200-C0E36EBEE3D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F54ECA1-4571-4FF8-9200-C0E36EBEE3D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

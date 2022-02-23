@@ -1,9 +1,5 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BeGreen.Models;
+using BeGreen.Domain.Entidades;
 using BeGreen.Dtos.Oferta;
 
 namespace BeGreen.Profiles
@@ -13,8 +9,8 @@ namespace BeGreen.Profiles
         public OfertaProfile()
         {
             CreateMap<CreateOfertaDto, Oferta>();
-            CreateMap<Oferta, CreateOfertaDto>();
-            CreateMap<CreateOfertaDto, Oferta>();
+            CreateMap<Oferta, ReadOfertaDto>();
+            CreateMap<UpdateOfertaDto, Oferta>();
         }
     }
 }

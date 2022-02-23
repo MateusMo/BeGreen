@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using BeGreen.Application;
+using BeGreen.Application.Applications;
+using BeGreen.Domain.Entidades;
 using BeGreen.Dtos.Oferta;
-using BeGreen.Models;
-using Microsoft.AspNetCore.Authorization;
+using BeGreen.Dtos.Parceiro;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -16,17 +16,20 @@ namespace BeGreen.Controllers
     {
         private readonly OfertaApplication _ofertaApplication;
 
+        private readonly ParceiroApplication _parceiroApplication;
+
         private readonly IMapper _mapper;
 
-        public OfertaController(IMapper mapper, OfertaApplication ofertaApplication)
+        public OfertaController(IMapper mapper, OfertaApplication ofertaApplication, ParceiroApplication parceiroApplication)
         {
             _mapper = mapper;
             _ofertaApplication = ofertaApplication;
+            _parceiroApplication = parceiroApplication;
         }
 
         [HttpGet]
         [Route("OfertasParceiro")]
-        public ActionResult<Oferta> ListarOfertas(int codigoParceiro)
+        public ActionResult<ReadOfertaDto> ListarOfertas(int codigoParceiro)
         {
             var ofertas = new List<Oferta>();
 
@@ -36,21 +39,25 @@ namespace BeGreen.Controllers
             if (ofertas.Any() is false)
                 return NotFound("Nenhuma oferta cadastrada!");
 
-            var result = _mapper.Map<ReadOfertaDto>(ofertas);
+            var result = _mapper.Map<List<ReadOfertaDto>>(ofertas);
 
             return Ok(result);
         }
 
         [HttpGet]
         [Route("{id:int}")]
-        public ActionResult<Oferta> ObterOferta(int id)
+        public ActionResult<ReadOfertaDto> ObterOferta(int id)
         {
             var oferta = _ofertaApplication.Get(id);
+            var parceiro = _parceiroApplication.Get(oferta.CodigoParceiro);
+
+            var ofertaRead = _mapper.Map<ReadOfertaDto>(oferta);
+            ofertaRead.Parceiro = _mapper.Map<ReadParceiroDto>(parceiro);
 
             if (oferta is null)
                 NotFound("Oferta não encontrada");
 
-            return Ok(oferta);
+            return Ok(ofertaRead);
         }
 
         [HttpPost]
@@ -61,7 +68,9 @@ namespace BeGreen.Controllers
 
             _ofertaApplication.Add(oferta);
 
-            return Ok(oferta);
+            var ofertaRead = _mapper.Map<ReadOfertaDto>(oferta);
+
+            return Ok(ofertaRead);
         }
 
         [HttpPut]
@@ -83,7 +92,7 @@ namespace BeGreen.Controllers
 
                 _ofertaApplication.Update(oferta);
 
-                return Ok("Oferta atualizada com sucesso!");
+                return Ok(ofertaUpdate);
             }
 
             return NotFound("Oferta não encontrada!");

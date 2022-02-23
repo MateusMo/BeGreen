@@ -1,10 +1,10 @@
-﻿using BeGreen.Enums;
+﻿using BeGreen.Domain.Enums;
 using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace BeGreen.Dtos.Usuario
 {
-    public class CreateLoginDto
+    public class CreateUsuarioDto
     {
         [Required(ErrorMessage = "O campo nome é obrigatório")]
         public string Nome { get; set; }
