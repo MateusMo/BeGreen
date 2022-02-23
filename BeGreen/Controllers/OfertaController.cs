@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using BeGreen.Application;
+using BeGreen.Application.Applications;
+using BeGreen.Domain.Entidades;
 using BeGreen.Dtos.Oferta;
 using BeGreen.Dtos.Parceiro;
-using BeGreen.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

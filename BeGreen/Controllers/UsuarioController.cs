@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using BeGreen.Application;
+using BeGreen.Application.Applications;
+using BeGreen.Domain.Entidades;
 using BeGreen.Dtos.Usuario;
-using BeGreen.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;

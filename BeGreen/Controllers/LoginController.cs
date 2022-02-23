@@ -1,4 +1,4 @@
-﻿using BeGreen.Application;
+﻿using BeGreen.Application.Applications;
 using BeGreen.Dtos.Login;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
