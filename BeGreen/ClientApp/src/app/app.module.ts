@@ -5,19 +5,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { LoginComponent } from './login/login.component';
-import { HomeUsuarioComponent } from './home-usuario/home-usuario.component';
-import { CadastroComponent } from './cadastro/cadastro.component';
-import { RedefinirSenhaComponent } from './redefinir-senha/redefinir-senha.component';
-import { CarteiraComponent } from './carteira/carteira.component';
+import { NavMenuComponent } from './routes/nav-menu/nav-menu.component';
+import { HomeComponent } from './routes/home/home.component';
+import { CounterComponent } from './routes/counter/counter.component';
+import { FetchDataComponent } from './routes/fetch-data/fetch-data.component';
+import { LoginComponent } from './routes/login/login.component';
+import { HomeUsuarioComponent } from './routes/home-usuario/home-usuario.component';
+import { CadastroComponent } from './routes/cadastro/cadastro.component';
+import { RedefinirSenhaComponent } from './routes/redefinir-senha/redefinir-senha.component';
+import { CarteiraComponent } from './routes/carteira/carteira.component';
 import { AgmCoreModule } from '@agm/core';
-import { CarbonoComponent } from './carbono/carbono.component';
-import { BlogComponent } from './blog/blog.component';
-import { CadastroPromocaoComponent } from './cadastro-promocao/cadastro-promocao.component';
+import { CarbonoComponent } from './routes/carbono/carbono.component';
+import { BlogComponent } from './routes/blog/blog.component';
+import { CadastroPromocaoComponent } from './routes/cadastro-promocao/cadastro-promocao.component';
 @NgModule({
   declarations: [
     AppComponent,

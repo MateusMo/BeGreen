@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CadastroEntidadeService } from '../services/cadastro-entidade.service';
-import { parceiro } from '../Models/parceiro';
-import { usuario } from '../Models/usuario';
+import { CadastroEntidadeService } from 'src/app/services/cadastro-entidade.service'; 
+import { parceiro } from '../../Models/parceiro';
+import { usuario } from '../../Models/usuario';
 
 @Component({
   selector: 'app-cadastro',
