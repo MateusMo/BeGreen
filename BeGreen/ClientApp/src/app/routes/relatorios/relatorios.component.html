@@ -1,0 +1,19 @@
+<app-nav-menu></app-nav-menu>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="form-group col-md-12">
+            <label for="inputState1">Relatórios</label>
+            <select id="inputState1" class="form-control">
+              <option selected>Selecione um relatório</option>
+              <option>Usuario</option>
+              <option>Em desenvolvimento 1</option>
+              <option>Em desenvolvimento 2</option>
+              <option>Em desenvolvimento 3</option>
+            </select>
+          </div>
+          <button (click)="setReport()" class="btn btn-success m-2">Pesquisar</button>
+    </div>
+    <div *ngIf="this.chooseReport == 'usuario'" class="row justify-content-center">
+        <app-relatorio-usuario></app-relatorio-usuario>
+    </div>
+</div>
