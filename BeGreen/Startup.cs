@@ -35,7 +35,8 @@ namespace BeGreen
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddDbContext<ContextBase>(options => options.UseSqlite(Configuration.GetConnectionString("SqlConnection")));
+            //services.AddDbContext<ContextBase>(options => options.UseSqlLite(Configuration.GetConnectionString("SqlConnection")));
+            services.AddDbContext<ContextBase>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlConnection")));
 
             services.AddSwaggerGen(c =>
             {

@@ -10,3 +10,15 @@ C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Domain\obj\Debug\net5.0\BeeG
 C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Domain\obj\Debug\net5.0\BeeGreen.Domain.dll
 C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Domain\obj\Debug\net5.0\ref\BeeGreen.Domain.dll
 C:\Users\DiogoF\Documents\Projetos\BeGreen\BeeGreen.Domain\obj\Debug\net5.0\BeeGreen.Domain.pdb
+C:\Users\mateu\OneDrive\Documents\BeGreen\BeGreen\BeeGreen.Domain\bin\Debug\net5.0\BeeGreen.Domain.deps.json
+C:\Users\mateu\OneDrive\Documents\BeGreen\BeGreen\BeeGreen.Domain\bin\Debug\net5.0\BeeGreen.Domain.dll
+C:\Users\mateu\OneDrive\Documents\BeGreen\BeGreen\BeeGreen.Domain\bin\Debug\net5.0\ref\BeeGreen.Domain.dll
+C:\Users\mateu\OneDrive\Documents\BeGreen\BeGreen\BeeGreen.Domain\bin\Debug\net5.0\BeeGreen.Domain.pdb
+C:\Users\mateu\OneDrive\Documents\BeGreen\BeGreen\BeeGreen.Domain\obj\Debug\net5.0\BeeGreen.Domain.csproj.AssemblyReference.cache
+C:\Users\mateu\OneDrive\Documents\BeGreen\BeGreen\BeeGreen.Domain\obj\Debug\net5.0\BeeGreen.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateu\OneDrive\Documents\BeGreen\BeGreen\BeeGreen.Domain\obj\Debug\net5.0\BeeGreen.Domain.AssemblyInfoInputs.cache
+C:\Users\mateu\OneDrive\Documents\BeGreen\BeGreen\BeeGreen.Domain\obj\Debug\net5.0\BeeGreen.Domain.AssemblyInfo.cs
+C:\Users\mateu\OneDrive\Documents\BeGreen\BeGreen\BeeGreen.Domain\obj\Debug\net5.0\BeeGreen.Domain.csproj.CoreCompileInputs.cache
+C:\Users\mateu\OneDrive\Documents\BeGreen\BeGreen\BeeGreen.Domain\obj\Debug\net5.0\BeeGreen.Domain.dll
+C:\Users\mateu\OneDrive\Documents\BeGreen\BeGreen\BeeGreen.Domain\obj\Debug\net5.0\ref\BeeGreen.Domain.dll
+C:\Users\mateu\OneDrive\Documents\BeGreen\BeGreen\BeeGreen.Domain\obj\Debug\net5.0\BeeGreen.Domain.pdb
