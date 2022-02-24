@@ -18,6 +18,8 @@ import { AgmCoreModule } from '@agm/core';
 import { CarbonoComponent } from './routes/carbono/carbono.component';
 import { BlogComponent } from './routes/blog/blog.component';
 import { CadastroPromocaoComponent } from './routes/cadastro-promocao/cadastro-promocao.component';
+import { RelatoriosComponent } from './routes/relatorios/relatorios.component';
+import { RelatorioUsuarioComponent } from './routes/relatorios/relatorio-usuario/relatorio-usuario.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,8 @@ import { CadastroPromocaoComponent } from './routes/cadastro-promocao/cadastro-p
     CarbonoComponent,
     BlogComponent,
     CadastroPromocaoComponent,
+    RelatoriosComponent,
+    RelatorioUsuarioComponent,
     
   ],
   imports: [
@@ -53,7 +57,8 @@ import { CadastroPromocaoComponent } from './routes/cadastro-promocao/cadastro-p
       { path: 'carbono', component: CarbonoComponent },
       { path: 'homeUsuario', component: HomeUsuarioComponent },
       { path: 'blog', component: BlogComponent },
-      { path: 'casatroPromocao', component: CadastroPromocaoComponent } 
+      { path: 'casatroPromocao', component: CadastroPromocaoComponent },
+      { path: 'relatorios', component: RelatoriosComponent } 
     ])
   ],
   providers: [],
